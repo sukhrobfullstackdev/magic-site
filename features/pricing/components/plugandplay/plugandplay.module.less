@@ -1,0 +1,147 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+
+  .headline {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 36px;
+      line-height: 40px;
+    });
+  }
+  .subheadline {
+    font-size: 18px;
+    line-height: 28px;
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 20px;
+      line-height: 32px;
+    });
+  }
+
+  .featureTag {
+    color: #522fd4;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background-color: #edebff;
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+  }
+
+  .hasTooltip {
+    border-bottom: 2px dashed #a799ff;
+    color:inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .buttonSecondary {
+    min-width: 240px;
+    grid-column-gap: 8px;
+    color: #18171a;
+    background-color: #ececee;
+    border: 1px solid #f8f8fa;
+    border-radius: 300px;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color .2s;
+    display: flex;
+    text-decoration: none;
+  }
+
+  .dividerContainer {
+    justify-content: center;
+    margin-bottom: 40px;
+    display: flex;
+    position: relative;
+
+    .dividerImage {
+      z-index: 2;
+      width: 80px;
+      height: 80px;
+      border-radius: 100px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(53,18,178,.19);
+    }
+    .dividerLine {
+      width: 100%;
+      height: 3px;
+      background-color: #edebff;
+      background-image: linear-gradient(90deg,#6851ff,#90def0);
+      position: absolute;
+      top: 50%;
+      bottom: auto;
+      left: 0%;
+      right: 0%;
+    }
+  }
+
+  .pricingFeaturesContainer {
+
+    // max-width:780px;
+    margin:0 auto;
+    grid-column-gap: 32px;
+
+    .pricingFeaturesCol {
+      text-align: left;
+
+      .featureTitle {
+        font-size:1.2rem;
+      }
+
+      .pricingFeaturesImg {
+        width: 64px;
+        height: 64px;
+        margin-top: -8px;
+        margin-left: -8px;
+      }
+
+      .featureListItem {
+        margin-bottom:1rem;
+      }
+      .featureListItemIcon {
+        margin-right:.5rem;
+      }
+
+    }
+
+    .pricingFeaturesDivider {
+      width: 1px;
+      background-color: #ededf3;
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+
+    .featureActions {
+      width: 100%;
+      margin-top: auto;
+
+      .featureActionsButton {
+        color: #fff;
+        background-color: #522fd4;
+        border-color: #522fd4;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        line-height: 28px;
+
+        &.isPurple {
+          color: #522fd4;
+          background-color: #edebff;
+          border-color: #edebff;
+          &:hover {
+            background-color: #e2dfff;
+          }
+        }
+      }
+    }
+
+  }
+
+}

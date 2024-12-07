@@ -1,0 +1,51 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+
+  text-align: left;
+
+
+  a {
+    color: #6851ff;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      color:#a796ff;
+      text-decoration: underline;
+    }
+  }
+
+  .headline {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 64px;
+      line-height: 88px;
+    });
+  }
+  .subheadline,.subheadline a {
+    font-size: 18px;
+    line-height: 28px;
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 20px;
+      line-height: 32px;
+    });
+  }
+
+  .accordionHeaderImg{
+    max-width:166px;
+  }
+  .faqLink {
+    text-decoration: none;
+  }
+  .accordionContainer {
+    button {
+      border:0!important;
+    }
+    span {
+      text-align: left!important;
+    }
+  }
+
+
+}

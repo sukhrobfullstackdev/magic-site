@@ -1,0 +1,11 @@
+# Algolia-Crawler-Verif: CC89C4F0DD153FF6
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://magic.link
+
+# Sitemaps
+Sitemap: https://magic.link/sitemap.xml

@@ -1,0 +1,307 @@
+@import (reference) 'styles/index.less';
+
+.hasTooltip {
+  border-bottom: 2px dashed #a799ff;
+  color:inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tooltipBody {
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color:#e2a5ff!important;
+  }
+}
+
+.HeroSection {
+
+    .headline {
+
+      font-size: 2.25rem;
+      line-height: 3rem;
+      #mg.screen.greaterThanOrEqual.md({
+        font-size: 64px;
+        line-height: 88px;
+      });
+
+    }
+    .subheadline {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    .buttonSecondary {
+      // min-width: 240px;
+      grid-column-gap: 8px;
+      color: #18171a;
+      background-color: #ececee;
+      border: 1px solid #f8f8fa;
+      border-radius: 300px;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background-color .2s;
+      display: flex;
+      text-decoration: none;
+    }
+
+
+
+    .pricingCards_flex {
+      grid-column-gap: 32px;
+    }
+
+    .pricingCards_col {
+
+    }
+
+    .pricingCardBackgroundShape {
+      z-index:0;
+      width:120px;
+      height:120px;
+      position:absolute;
+      top:0px;
+      right:0px;
+      background-image:url('public/images/pricing/hero-swoosh.png');
+      background-position:right top;
+      background-size:contain;
+      background-repeat:no-repeat;
+
+      #mg.screen.greaterThanOrEqual.sm({
+        width:200px;
+        height:200px;
+      });
+      #mg.screen.greaterThanOrEqual.md({
+        width:140px;
+        height:140px;
+      });
+      #mg.screen.greaterThanOrEqual.lg({
+        width:200px;
+        height:200px;
+      });
+
+    }
+
+    .pricingCardBackgroundLaptop {
+      z-index:1;
+      width:80px;
+      height:80px;
+      position:absolute;
+      top:10px;
+      right:10px;
+      background-image:url('public/images/pricing/laptop.png');
+      background-position:right top;
+      background-size:contain;
+      background-repeat:no-repeat;
+      #mg.screen.greaterThanOrEqual.sm({
+        width:160px;
+        height:160px;
+      });
+      #mg.screen.greaterThanOrEqual.md({
+        top:0px;
+        right:20px;
+        width:110px;
+        height:110px;
+      });
+      #mg.screen.greaterThanOrEqual.lg({
+        width:160px;
+        height:160px;
+      });
+    }
+    .pricingCardBackgroundGlobe {
+      z-index:1;
+      width:70px;
+      height:70px;
+      position:absolute;
+      top:10px;
+      right:10px;
+      background-image:url('public/images/pricing/globe.png');
+      background-position:right top;
+      background-size:contain;
+      background-repeat:no-repeat;
+      #mg.screen.greaterThanOrEqual.sm({
+        width:140px;
+        height:140px;
+      });
+      #mg.screen.greaterThanOrEqual.md({
+        width:105px;
+        height:105px;
+      });
+      #mg.screen.greaterThanOrEqual.lg({
+        top:15px;
+        right:15px;
+        width:140px;
+        height:140px;
+      });
+    }
+
+    @media (min-width:400px) and (max-width:640px) {
+      .pricingCardBackgroundGlobe {
+        width: 100px!important;
+        height: 100px!important;
+      }
+      .pricingCardBackgroundLaptop {
+        width: 100px!important;
+        height: 100px!important;
+      }
+    }
+
+    .pricingCards_card {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      border-radius: 24px;
+      background: radial-gradient(106.38% 141.42% at 100% 100%, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.14) 37.5%, rgba(255, 255, 255, 0.14) 72.4%, rgba(255, 255, 255, 0.00) 100%);
+
+      box-shadow: 0px 24px 64px 0px rgba(55, 40, 183, 0.24), 0px 0px 4px 0px #A799FF inset, 4px 4px 24px 0px rgba(255, 255, 255, 0.16), -4px -4px 24px 0px rgba(255, 255, 255, 0.16);
+    }
+
+    .pricingCards_card::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(
+              to right bottom,
+              rgba(255, 255, 255, 1),
+              rgba(255, 255, 255, 0),
+              rgba(255, 255, 255, 0.4),
+              rgba(255, 255, 255, 0.2),
+              rgba(255, 255, 255, 0.1),
+              rgba(255, 255, 255, 0.6)
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+    }
+
+    .pricingCards_cardTop {
+
+      position:relative;
+      z-index:2;
+      color: #fff;
+      padding: 32px;
+      background: linear-gradient(360deg, rgba(255, 255, 255, 0.24) -5.69%, rgba(255, 255, 255, 0.00) 100%);
+
+      #mg.screen.greaterThanOrEqual.md({
+        min-height: 330px;
+      });
+
+    }
+
+    .pricingCards_cardBottom {
+      color:#fff;
+      background-color: transparent;
+      background-image: linear-gradient(rgba(255,255,255,.02),rgba(255,255,255,.09));
+
+      #mg.screen.greaterThanOrEqual.md({
+        min-height: 330px;
+      });
+
+    }
+
+    .pricingCards_tier {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 36px!important;
+      line-height: 1;
+      color:#fff!important;
+      background-color:#fff!important;
+      background-image:none;
+
+      #mg.screen.greaterThanOrEqual.lg({
+        font-size: 48px!important;
+      });
+
+    }
+
+    .pricingCards_title {
+      margin-bottom: 20px;
+      font-size: 12px!important;
+      line-height: 1;
+      color:#FFF;
+
+      #mg.screen.greaterThanOrEqual.lg({
+        font-size: 16px!important;
+      });
+
+    }
+
+  .pricingCards_colDark {
+
+    .pricingCards_card {
+      background: linear-gradient(153deg, rgba(78, 77, 82, 0.33) 1.54%, rgba(35, 34, 38, 0.62) 51.27%);
+    }
+
+    .pricingCards_title {
+      color:#d7b4f9;
+    }
+
+    .pricingCards_cardBottom {
+      background-image: none;
+    }
+
+  }
+
+    .pricingCards_featureActions {
+      width: 100%;
+      margin-top: auto;
+
+      .pricingCards_featureActionsButton {
+        color: #fff;
+        background-color: #522fd4;
+        border-color: #522fd4;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        line-height: 28px;
+        &:hover {
+          background-color: #5732e3!important;
+          border-color: #5732e3!important;
+        }
+      }
+      .pricingCards_featureActionsButtonBlack {
+        color: #19191a;
+        background-image: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0)),linear-gradient(315deg,#b3a7ff,#e2a5ff);
+        border-color: #522fd4;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        line-height: 28px;
+
+        &:hover {
+          background-image:linear-gradient(rgba(255,255,255,.12),rgba(255,255,255,.12)),linear-gradient(315deg,#b3a7ff,#e2a5ff);
+        }
+      }
+    }
+
+    .pricingCards_cardBottom {
+
+      padding: 32px;
+
+
+      .pricingCards_FeatureList {
+
+      }
+      .pricingCards_FeatureListItem {
+        margin-bottom:1rem;
+        text-align: left!important;
+      }
+      .pricingCards_FeatureListItemIcon {
+        margin-right:.5rem;
+      }
+      .pricingCards_FeatureListItemText {
+
+      }
+
+    }
+
+
+
+}
+

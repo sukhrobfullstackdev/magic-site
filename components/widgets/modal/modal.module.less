@@ -1,0 +1,90 @@
+@import (reference) "styles/index.less";
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.70);
+  display: flex;
+  z-index: 1024;
+  transition: all 0.3s ease-in-out;
+  padding: 80px 0;
+  overflow-y: auto;
+  @media (max-width: @mobileBreakPoint) {
+    padding: 20px;
+  }
+  &.centered {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.modalContent {
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  z-index: 1024;
+  width: 100%;
+  margin: 0 auto;
+  height: fit-content;
+  border-radius: 10px;
+
+  &.lg {
+    @media (min-width: @mobileBreakPoint) {
+      max-width: 800px;
+    }
+  }
+  &.md {
+    @media (min-width: @mobileBreakPoint) {
+      max-width: 580px;
+    }
+  }
+  &.sm {
+    @media (min-width: @mobileBreakPoint) {
+      max-width: 300px;
+    }
+  }
+}
+
+.modalHeader {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.3);
+
+  h3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 0;
+    color: #000000;
+  }
+
+  .close {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+
+.footer {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(189, 189, 189, 0.3);
+}
+
+
+.modalBody {
+  padding: 15px;
+  &.noPadding {
+    padding: 0;
+  }
+}
+
+
+

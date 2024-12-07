@@ -1,0 +1,75 @@
+@import (reference) 'styles/index.less';
+
+.Footer {
+  &.darkWrapper {
+    background: #000;
+    h4 {
+      color: #fff;
+    }
+    span a {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    p {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .logo {
+      svg path {
+        fill: #fff;
+      }
+      &:hover {
+        &:before {
+          background-color: #ffffff26 !important;
+        }
+      }
+    }
+    .divider {
+      background-color: #160739;
+    }
+  }
+
+  .recaptchaLink {
+    color:#A799FF;
+    text-decoration: none;
+  }
+
+  .logo {
+    flex-basis: 40%;
+    p {
+      color: #mg.getThemeColor(mid) [];
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: #mg.getThemeColor(mid) [lightest];
+    flex-shrink: 0;
+  }
+
+  .linkStyleOverride a,
+  a.linkStyleOverride {
+    font-weight: 500;
+    font-size: 14px !important;
+    color: #mg.getThemeColor(mid) [];
+    #mg.screen.lessThan.sm({
+      font-size: 18px !important;
+    });
+  }
+
+  h4 {
+    font-weight: 600;
+    color: #18171a;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+.ManageCookieSettings {
+  background:#0d0d0d;
+  border:0px;
+  width: 100%;
+  color:#a799ff;
+  cursor: pointer;
+  padding:20px;
+  font-size: 12px;
+}

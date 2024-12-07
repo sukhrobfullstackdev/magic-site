@@ -1,0 +1,190 @@
+// typography
+.typography-m {
+  color: @ink100;
+
+  /* Web Typography/Desktop/P Standard (400) - Desktop */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @media screen and (max-width: @tabletBreakPoint) {
+    font-size: 14px;
+  }
+}
+
+.typography-l {
+  color: @ink100;
+
+  /* Web Typography/Desktop/P Large (600) - Desktop */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+}
+
+.typography-xl {
+  color: @ink100;
+
+  /* Web Typography/Desktop/P XL (700) - Desktop */
+  font-family: Inter !important;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700 !important;
+  line-height: 32px !important; /* 160% */
+}
+
+.typography-h1 {
+  /* Web Typography/2023 Styles/H1 - Desktop */
+  font-family: 'GT Super';
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 88px */
+  letter-spacing: -1.6px;
+
+  @media screen and (max-width: @tabletBreakPoint) {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+  }
+}
+
+.typography-h2 {
+  /* Web Typography/2023 Styles/H2 - Desktop */
+  font-family: GTSuper;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 61.6px */
+  letter-spacing: -1.12px;
+}
+
+.typography-h3 {
+  /* H3/H3 (600) */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 150% */
+}
+
+.typography-h6 {
+  /* H6 (Label)/H6 (600) */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px; /* 100% */
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+// color
+.color-ink80 {
+  color: @ink80;
+}
+
+.color-ink70 {
+  color: @ink70;
+}
+
+.color-ink10 {
+  color: @ink10;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-white {
+  color: white;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// button
+.button {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  outline: none;
+  border: none;
+  border-radius: 80px;
+  background: @magic50;
+
+  color: white;
+  text-align: center;
+  font-feature-settings: 'calt' off;
+
+  /* P Large/P Large (600 - Link) */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+
+  cursor: pointer;
+
+  &.variant-secondary {
+    background: @magic10;
+    color: @magic70;
+  }
+
+  &.variant-tertiary {
+    color: @ink10;
+    border: 1px solid #fff;
+    background: linear-gradient(180deg, rgba(104, 81, 255, 0) 0%, #6851ff 100%);
+    box-shadow: -2px -2px 4px 0px rgba(255, 255, 255, 0.25);
+  }
+
+  &.variant-outline {
+    border: 1px solid @magic50;
+    background: white;
+    color: @magic50;
+  }
+
+  &.variant-dark {
+    background: linear-gradient(105deg, #828282 -25.48%, #4c4c4c 40.84%, #000 100.89%);
+    color: white;
+  }
+
+  &.size-sm {
+    height: 38px;
+
+    /* P Small/P Small (600 - Link) */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+  }
+}
+
+// size
+.w-full {
+  width: 100%;
+}

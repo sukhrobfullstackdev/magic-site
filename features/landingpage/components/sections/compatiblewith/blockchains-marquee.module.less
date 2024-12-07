@@ -1,0 +1,77 @@
+@import (reference) 'styles/index.less';
+
+.marqueeWrapper {
+
+  .marqueeWrapperInner {
+
+    overflow: hidden;
+    height:100px;
+    position: relative;
+
+    .marqueeItems {
+      position: absolute;
+      left:0%;
+      top:50%;
+      transform:translate(0%,-50%);
+
+      &.bcMarqueeAnimated {
+        animation: marqueeScroll 45s linear 0s normal infinite none running;
+      }
+
+      .marqueeItem {
+        min-height: 24px;
+      }
+
+    }
+
+    .marqueeGradientLeft {
+      position: absolute;
+      top:0px;
+      left:0px;
+      bottom:0px;
+      width:25%;
+      z-index:1;
+      background: transparent;
+      @supports (background: linear-gradient(94deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)) {
+        background: -moz-linear-gradient(94deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        background: -webkit-linear-gradient(94deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(94deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+      }
+    }
+    .marqueeGradientRight {
+      position: absolute;
+      top:0px;
+      right:0px;
+      bottom:0px;
+      width:25%;
+      z-index:1;
+      background: transparent;
+      @supports (background: linear-gradient(94deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)) {
+        background: -moz-linear-gradient(94deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        background: -webkit-linear-gradient(94deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(94deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+      }
+    }
+
+  }
+
+
+}
+
+@media (prefers-reduced-motion) {
+  .marqueeItems.bcMarqueeAnimated {
+    animation: none!important;
+  }
+}
+
+
+@keyframes marqueeScroll {
+  0% {
+    transform:translate(0%,-50%);
+	}
+	100% {
+    transform:translate(-50%,-50%);
+	}
+}

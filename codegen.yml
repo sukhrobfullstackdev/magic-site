@@ -1,0 +1,21 @@
+overwrite: true
+
+schema: ${NEXT_PUBLIC_GRAPHCMS_ENDPOINT}
+
+documents:
+  - ./graphql/**/*.{ts,tsx}
+  - ./**/graphql/**/*.{ts,tsx}
+
+generates:
+  ./graphql/generated/index.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+
+  ./graphql/generated/schema.json:
+    plugins:
+      - 'introspection'
+
+hooks:
+  afterOneFileWrite:
+    - prettier --write

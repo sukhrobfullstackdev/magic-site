@@ -1,0 +1,174 @@
+@import (reference) 'styles/index.less';
+
+.contentCompareAllFeatures {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: @contentBreakPoint;
+
+  .dividerInk20 {
+    background-color: @ink20;
+    height: 1px;
+    width: 100%;
+  }
+
+  .dividerInk30 {
+    background-color: @ink30;
+    height: 1px;
+    width: 100%;
+  }
+
+  .contentRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+
+    @media screen and (max-width: @tabletBreakPoint) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &.contentSticky {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: @ink10;
+    }
+
+    .contentGridLeft {
+      width: 314px;
+      padding: 8px;
+
+      @media screen and (max-width: @tabletBreakPoint) {
+        width: 100%;
+      }
+
+      .copyCompareAllFeatures {
+        background: linear-gradient(180deg, #000 0%, #6851ff 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        width: 282px;
+
+        @media screen and (max-width: @tabletBreakPoint) {
+          width: 284px;
+          text-align: center;
+        }
+      }
+    }
+
+    .contentGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      flex: 1;
+
+      @media screen and (max-width: @tabletBreakPoint) {
+        width: 100%;
+      }
+
+      & > * {
+        flex: 1;
+
+        color: @ink100;
+        text-align: center;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22.986px; /* 143.662% */
+      }
+
+      .contentSummary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+
+        .copyPlanName {
+          color: #000;
+          font-family: 'JetBrainsMono';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 13.831px; /* 76.836% */
+          letter-spacing: 1.08px;
+          text-transform: uppercase;
+
+          @media screen and (max-width: @tabletBreakPoint) {
+            font-size: 14px;
+            letter-spacing: 0.84px;
+            line-height: 13.831px;
+          }
+        }
+
+        .copyPrice {
+          color: @ink100;
+          text-align: center;
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22.986px; /* 143.662% */
+
+          @media screen and (max-width: @tabletBreakPoint) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .contentArccordion {
+    button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: none;
+      outline: none;
+      padding: 24px 0 20px 8px;
+      box-sizing: content-box;
+      // padding: 0;
+    }
+
+    .contentArcodianHeadline {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contentArccordianRow {
+      padding: 24px 0 20px 8px;
+      border-bottom: 1px solid @ink30;
+
+      .contentArccordianRowValue {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .copyBodyStandard {
+    color: @ink100;
+
+    /* Web Typography/Desktop/P Standard (500) - Desktop */
+    font-family: Inter;
+    font-style: normal;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+
+    /* Web Typography/Mobile/P Standard (600) - Mobile */
+    @media screen and (max-width: @contentBreakPoint) {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}

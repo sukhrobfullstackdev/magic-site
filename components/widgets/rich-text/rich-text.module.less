@@ -1,0 +1,330 @@
+@import (reference) 'styles/index.less';
+
+.RichText {
+  font-weight: 400;
+
+  img:where(.withStyle *),
+  img:not(.noStyle *) {
+    width: 100%;
+  }
+
+  // Headings
+  h1:where(.withStyle *),
+  h1:not(.noStyle *),
+  h2:where(.withStyle *),
+  h2:not(.noStyle *),
+  h3:where(.withStyle *),
+  h3:not(.noStyle *),
+  h4:where(.withStyle *),
+  h4:not(.noStyle *),
+  h1:where(.withStyle *) a,
+  h1:not(.noStyle *) a,
+  h2:where(.withStyle *) a,
+  h2:not(.noStyle *) a,
+  h3:where(.withStyle *) a,
+  h3:not(.noStyle *) a,
+  h4:where(.withStyle *) a,
+  h4:not(.noStyle *) a {
+    color: #18171a;
+    margin-top: 1.7rem;
+  }
+
+  h1:where(.withStyle *),
+  h1:not(.noStyle *),
+  h1:where(.withStyle *) a,
+  h1:not(.noStyle *) a {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+  }
+
+  h2:where(.withStyle *),
+  h2:not(.noStyle *),
+  h2:where(.withStyle *) a,
+  h2:not(.noStyle *) a {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+  }
+
+  h3:where(.withStyle *),
+  h3:not(.noStyle *),
+  h3:where(.withStyle *) a,
+  h3:not(.noStyle *) a {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+
+  h4:where(.withStyle *),
+  h4:not(.noStyle *),
+  h4:where(.withStyle *) a,
+  h4:not(.noStyle *) a {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  h5:where(.withStyle *),
+  h5:not(.noStyle *),
+  h5:where(.withStyle *) a,
+  h5:not(.noStyle *) a {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #mg.getThemeColor(mid) [];
+  }
+
+  p:where(.withStyle *),
+  p:not(.noStyle *) {
+    margin: 20px 0;
+    color: black;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  // Markdown integration buttons (e.g. Vercel, Postman)
+  a:where(.withStyle *) > img,
+  a:not(.noStyle *) > img {
+    width: 20%;
+  }
+
+  // Inline code
+  code:where(.withStyle *):global(:not(.prism-code)),
+  code:not(.noStyle *):global(:not(.prism-code)) {
+    color: #6851ff !important;
+    background-color: #f1eeff;
+    padding: 0.2rem 0.4em;
+    border-radius: 6px;
+    font: inherit;
+    font-family: 'SFMono';
+    line-height: 24px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    transition: color 0.2s ease;
+  }
+
+  a:where(.withStyle *) code:global(:not(.prism-code)):hover,
+  a:not(.noStyle *) code:global(:not(.prism-code)):hover {
+    color: inherit;
+  }
+
+  // Details
+  details:where(.withStyle *),
+  details:not(.noStyle *) {
+    margin: 1.5rem 0;
+    padding: 1.4rem 0rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid #d4d4d4;
+    border-radius: 1px;
+
+    p {
+      margin-top: 1.5rem;
+      margin-left: 15px;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  details:where(.withStyle *)[open],
+  details:not(.noStyle *)[open] {
+    overflow: hidden;
+  }
+
+  details:where(.withStyle *) > summary,
+  details:not(.noStyle *) > summary {
+    font-weight: 600;
+    font-size: 17px;
+    outline: none;
+    cursor: pointer;
+    list-style-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.52717 6.3538C5.70658 6.14587 5.70658 5.85478 5.56305 5.64685L1.32898 0.822938C1.14957 0.61501 0.862511 0.61501 0.718983 0.822938L0.467809 1.11404C0.288399 1.32196 0.288399 1.61306 0.467809 1.82099L4.12777 5.97953L0.467809 10.1797C0.288399 10.3876 0.288399 10.6787 0.467809 10.8866L0.718983 11.1777C0.862511 11.3856 1.14957 11.3856 1.32898 11.1777L5.52717 6.3538Z' fill='black'/%3E%3C/svg%3E%0A");
+
+    &::-webkit-details-marker {
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.52717 6.3538C5.70658 6.14587 5.70658 5.85478 5.56305 5.64685L1.32898 0.822938C1.14957 0.61501 0.862511 0.61501 0.718983 0.822938L0.467809 1.11404C0.288399 1.32196 0.288399 1.61306 0.467809 1.82099L4.12777 5.97953L0.467809 10.1797C0.288399 10.3876 0.288399 10.6787 0.467809 10.8866L0.718983 11.1777C0.862511 11.3856 1.14957 11.3856 1.32898 11.1777L5.52717 6.3538Z' fill='black'/%3E%3C/svg%3E%0A");
+      float: right;
+      color: transparent;
+    }
+  }
+
+  // Quotes
+  blockquote:where(.withStyle *),
+  blockquote:not(.noStyle *) {
+    color: #666666;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    padding: 0 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  // Misc.
+  hr:where(.withStyle *),
+  hr:not(.noStyle *) {
+    border: 0;
+    border-top: 1px solid @grayLightest;
+    margin: 1.25rem 0;
+  }
+
+  ul:where(.withStyle *),
+  ul:not(.noStyle *),
+  ol:where(.withStyle *),
+  ol:not(.noStyle *) {
+    padding-left: 2.5rem;
+    margin: 1.25rem 0;
+  }
+
+  ul:where(.withStyle *),
+  ul:not(.noStyle *) {
+    list-style-type: disc;
+  }
+
+  ol:where(.withStyle *),
+  ol:not(.noStyle *) {
+    list-style-type: auto;
+  }
+
+  li:where(.withStyle *),
+  li:not(.noStyle *) {
+    position: relative;
+    margin-bottom: 0.625rem;
+    line-height: 28px;
+  }
+
+  ul:where(.withStyle *) li:before,
+  ul:not(.noStyle *) li:before {
+    content: unset;
+    color: black;
+    position: absolute;
+    margin-left: -1rem;
+  }
+
+  table:where(.withStyle *),
+  table:not(.noStyle *) {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 20px;
+    overflow: auto;
+    width: 100%;
+
+    code {
+      white-space: pre !important;
+    }
+
+    td,
+    th {
+      border: 1px solid #eeeeee;
+      padding: 18px;
+    }
+
+    th {
+      background-color: var(--white);
+      color: var(--black);
+      font-weight: 600;
+    }
+  }
+}
+
+// --- Admonitions ---------------------------------------------------------- //
+
+.Admonition {
+  margin-top: 20px;
+  width: 100%;
+  .content {
+    &.info * {
+      color: #mg.getThemeColor(primary) [darker];
+    }
+    &.success * {
+      color: #mg.getThemeColor(success) [darker];
+    }
+    &.warning * {
+      color: #mg.getThemeColor(warning) [darker];
+    }
+    &.error * {
+      color: #mg.getThemeColor(error) [darker];
+
+      a {
+        text-decoration-color: #mg.getThemeColor(error) [darker];
+
+        &:hover,
+        &:focus {
+          color: #ff9b80;
+          text-decoration-color: #ff9b80;
+        }
+      }
+    }
+
+    > :first-child {
+      margin-top: 8px;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    a {
+      font-weight: 700;
+    }
+  }
+}
+
+// --- Headings ------------------------------------------------------------- //
+
+.LinkableHeading {
+  position: relative;
+  transition: all 0.2s ease;
+  width: calc(100% - 18px);
+
+  .target {
+    display: block;
+    margin-top: -20px;
+    padding-top: 20px;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  a {
+    position: relative;
+    text-decoration: none;
+    border-bottom: none;
+    padding-bottom: 4px;
+
+    .hash {
+      display: none;
+      position: absolute;
+      color: #mg.getThemeColor(primary) [];
+      right: 0;
+      bottom: 0;
+      transform: translateX(calc(100% + 6px)) translateY(25%);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px dotted #mg.getThemeColor(primary) [];
+      outline: none;
+      .hash {
+        display: block;
+      }
+    }
+  }
+}
+
+// --- Visual separator ----------------------------------------------------- //
+
+.VisualSeparator {
+  width: 100%;
+  height: 1px;
+  background-color: #mg.getThemeColor(mid) [lightest];
+  margin-top: 64px;
+}

@@ -1,0 +1,38 @@
+@import (reference) 'styles/index.less';
+
+.DiversitySection {
+  margin-top: 64px;
+  #mg.screen.greaterThanOrEqual.lg({ margin-top: 120px; });
+  #mg.screen.greaterThanOrEqual.xl({ margin-top: 160px; });
+
+  width: 100%;
+  position: relative;
+}
+
+.DiversitySectionIntro {
+  max-width: 700px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 64px;
+
+  #mg.screen.lessThan.lg({
+    margin-bottom: 32px;
+  });
+
+  .headline {
+    margin-bottom: 16px;
+    #mg.screen.greaterThanOrEqual.lg({ margin-bottom: 24px; });
+  }
+
+  .subheadline {
+    opacity: 0.8;
+    margin-bottom: 18px;
+    #mg.screen.greaterThanOrEqual.sm({ margin-bottom: 20px; });
+  }
+}
+
+.DiversitySectionImage {
+  img {
+    width: 100%;
+  }
+}

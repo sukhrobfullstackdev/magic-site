@@ -1,0 +1,84 @@
+@import (reference) 'styles/index.less';
+
+.toggleButtonContainer {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  background-color: white;
+  padding: 8px;
+  border-radius: 300px;
+  height: 52px;
+  box-sizing: border-box;
+  border: 1px solid @ink30;
+
+  .toggleOption {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: @ink100;
+    padding: 6px 16px;
+    height: 36px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.2s ease;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+
+    > input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      whitespace: nowrap;
+      width: 1px;
+    }
+  }
+
+  .indicator {
+    background-color: @magic10;
+    height: 36px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 300px;
+    transition: bacground-color 500ms, box-shadow 500ms, transform 200ms ease, width 200ms ease;
+    transform: translateX(0);
+    width: var(--toggleButtonWidth1);
+    box-sizing: border-box;
+
+    &.firstActive {
+      transform: translateX(0);
+      width: var(--toggleButtonWidth1);
+    }
+
+    &.secondActive {
+      transform: translateX(var(--toggleButtonWidth1));
+      width: var(--toggleButtonWidth2);
+    }
+  }
+}
+
+.toggleButtonContainer.disabled {
+  pointer-events: none;
+
+  .toggleOption {
+    color: @ink30;
+  }
+
+  .indicator {
+    // background-color: @ink10;
+    box-shadow: none;
+    animation: none;
+  }
+}
+
+.isActive {
+  color: @magic70 !important;
+}

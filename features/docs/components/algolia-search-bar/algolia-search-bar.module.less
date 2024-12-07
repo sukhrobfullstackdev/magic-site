@@ -1,0 +1,50 @@
+.DocSearchWrapper {
+  width: 100%;
+  :global(.DocSearch-Hit) {
+    cursor: pointer;
+  }
+
+  :global(.DocSearch-Hit[aria-selected='true'] a) {
+    background-color: #efefef !important;
+  }
+
+  :global(.DocSearch-Hit-content-wrapper) {
+    white-space: pre-line;
+  }
+
+  @media (max-width: 750px) {
+    :global(.DocSearch-Container) {
+      position: fixed;
+      width: 100%;
+    }
+  }
+
+  :global(.DocSearch-Container) {
+    height: 100%;
+    width: 100%;
+  }
+
+  :global(.DocSearch-Button) {
+    height: 40px;
+    border-radius: 50px;
+    width: 100%;
+    margin: 0;
+    padding: 0px 11px;
+    display: flex;
+    margin: auto;
+
+    svg,
+    span {
+      color: #4e4d52;
+    }
+  }
+}
+
+.mobileIcon {
+  border: none;
+  background: transparent;
+
+  img {
+    width: 42px;
+  }
+}

@@ -1,0 +1,145 @@
+@import (reference) 'styles/index.less';
+
+.priceCalculator {
+  box-shadow: 2px 6px 28px rgb(0 0 0 / 9%);
+  border-radius: 16px;
+  width: 384px;
+  height: 420px;
+  background: #fff;
+
+  // for backdrop visibility
+  z-index: 1;
+  position: relative;
+
+  #mg.screen.lessThan.md({ width: 352px; });
+
+  #mg.screen.lessThan.lg({ margin-top: 80px; order: 2; });
+
+  label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #18171a;
+  }
+
+  .heading {
+    background: linear-gradient(90deg, #6851ff 0%, #00907e 100%);
+    position: absolute;
+    color: @white;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    width: 148px;
+    padding: 8px 0;
+    border-top-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    font-weight: 700;
+  }
+
+  .content {
+    padding: 65px 40px;
+
+    #mg.screen.lessThan.sm({
+        padding: 65px 20px;
+      }
+
+    );
+
+    .inputWrapper {
+      div {
+        border-color: #e2e0e6;
+      }
+
+      input {
+        text-align: right;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    .monthlyTotal {
+      border-top: 1px solid @grayLightest;
+      padding-top: 15px;
+
+      h4 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+      }
+
+      .totalMonthlyCost {
+        h3 {
+          font-weight: 800;
+          font-size: 24px;
+          line-height: 36px;
+        }
+      }
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 20px;
+      span {
+        font-weight: 400;
+      }
+    }
+
+    > div {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 600;
+    }
+
+    .fairPricingProtection {
+      margin-top: 8px;
+      color: @magicDarker;
+      background: @magicLightest;
+      width: 148px;
+      text-align: center;
+      font-size: 10px;
+      line-height: 10px;
+      padding: 6px 0;
+      border-radius: 6px;
+      align-self: flex-end;
+    }
+  }
+}
+
+.MonthlyLoginsDropdown {
+  margin: 0;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 16px 50px 16px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter';
+  outline: none;
+  border: 1px solid #e2e0e6;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml, %0A%3Csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.96978 7.91588C8.28168 8.18499 8.71832 8.18499 9.03021 7.9697L16.2661 1.61859C16.578 1.34947 16.578 0.918889 16.2661 0.703597L15.8294 0.326836C15.5175 0.0577212 15.0809 0.0577212 14.769 0.326836L8.53119 5.81678L2.23099 0.326836C1.9191 0.0577206 1.48246 0.0577206 1.17056 0.326835L0.733917 0.703596C0.422026 0.918888 0.422026 1.34947 0.733917 1.61859L7.96978 7.91588Z' fill='%236851FF'/%3E%3C/svg%3E%0A");
+  background-position: calc(100% - 20px) calc(23px), calc(100% - 15px) calc(23px), 100% 0;
+  background-size: 16px 8px, 8px 8px, 50px 50px;
+  background-repeat: no-repeat;
+
+  &:hover {
+    transition: 0.3s all;
+    border: 1px solid @magic;
+  }
+
+  &:focus {
+    transition: 0.3s all;
+    box-shadow: 0 0 0 1pt @magic;
+  }
+}

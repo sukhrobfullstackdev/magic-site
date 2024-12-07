@@ -1,0 +1,81 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  --gutter-y: 0px;
+  --border-radius: 48px;
+
+  margin: var(--gutter-y) auto;
+
+  .content {
+    position: relative;
+    z-index:1;
+    .headline {
+      font-weight: 800;
+    }
+  }
+
+  .leftCap {
+    position: absolute;
+    z-index:0;
+    top:0px;
+    opacity: 0;
+    left:0px;
+
+    height:50%;
+    #mg.screen.greaterThanOrEqual.md({ height: 100%; });
+
+    width:58vw;
+    #mg.screen.greaterThanOrEqual.md({ width:33vw; });
+
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+    background: rgb(157,147,248);
+    @supprts () {
+      background: linear-gradient(30deg, rgba(157,147,248,1) 33%, rgba(219,185,249,1) 66%, rgba(246,239,250,1) 100%);
+    }
+
+    transition:width .5s ease, opacity 1s ease;
+
+    &.leftCapAnimated {
+      width:60vw;
+      #mg.screen.greaterThanOrEqual.md({ width:35vw; });
+      opacity: 1;
+    }
+
+  }
+
+  .slideContainer {
+
+    display: block;
+    overflow: visible;
+    // opacity:0;
+    // transform: scale(.9);
+    // transition:opacity .5s ease;
+    &.slideContainerAnimated {
+      display: block;
+      // transform: scale(1);
+      // opacity:1;
+    }
+  }
+
+
+  .checkListContainer {
+    width:70%;
+    margin:2rem 0;
+
+
+    ul {
+      li {
+        padding-left: 1.4rem;
+        list-style: none;
+      	background-image: url('/images/landingpage/icons/check.svg');
+      	background-repeat: no-repeat;
+      	background-position: left top;
+      	background-size: 1.2rem;
+        margin-bottom:.5rem;
+      }
+    }
+  }
+
+
+}

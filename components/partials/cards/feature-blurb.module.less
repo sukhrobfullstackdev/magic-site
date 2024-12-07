@@ -1,0 +1,86 @@
+@import (reference) '../../../styles/index.less';
+
+.FeatureBlurb {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+
+  &.tertiary {
+    background: linear-gradient(154.8deg, #f8f8fa 14.16%, #edebff 86.76%), #edebff;
+    border-radius: 20px;
+    padding: 24px;
+
+    img {
+      margin-bottom: 24px;
+      height: 40px;
+
+      #mg.screen.greaterThanOrEqual.lg({ height: 48px; });
+    }
+
+    .description {
+      color: #mg.getThemeColor(mid) [darkest];
+    }
+  }
+
+  &.reverseFlowOnMobile {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+      margin-right: 24px;
+      margin-left: 0;
+    }
+  }
+
+  #mg.screen.greaterThanOrEqual.lg({
+    flex-direction: column;
+    align-items: flex-start;
+    &.reverseFlowOnMobile {
+      flex-direction: column;
+    }
+  });
+
+  .label {
+    margin-bottom: 4px;
+    #mg.screen.greaterThanOrEqual.lg({
+      margin-bottom: 8px;
+      margin-top: 24px;
+    });
+  }
+
+  .description {
+    color: #mg.getThemeColor(mid) [];
+
+    &.hasDarkBackground {
+      color: #mg.getThemeColor(mid) [lighter];
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    #mg.screen.lessThan.lg({
+      margin-right: 0;
+      margin-left: 24px;
+    });
+  }
+
+  .image {
+    height: 48px;
+    line-height: 0;
+    #mg.screen.greaterThanOrEqual.lg({ height: 64px; });
+  }
+}
+
+.flexColumn {
+  #mg.screen.lessThan.lg ({
+    flex-direction: column;
+
+    .content {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  });;
+}

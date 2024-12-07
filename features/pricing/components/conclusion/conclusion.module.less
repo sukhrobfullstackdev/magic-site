@@ -1,0 +1,47 @@
+@import (reference) 'styles/index.less';
+
+.ConclusionSection {
+  margin-top: 64px;
+  text-align: center;
+  #mg.screen.greaterThanOrEqual.sm({ margin-top: 72px; });
+  #mg.screen.greaterThanOrEqual.md({ margin-top: 86px; });
+  #mg.screen.greaterThanOrEqual.lg({ margin-top: 120px; });
+
+  .greyButton {
+    span {
+      color: #18171a!important;
+    }
+
+    background-color: #f8f8fa!important;
+
+    &:hover {
+      background-color: #eee!important;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    letter-spacing: -0.02em;
+    mix-blend-mode: multiply;
+  }
+
+  p {
+    margin: 32px 0 48px 0;
+    max-width: 584px;
+    #mg.screen.lessThan.lg({ margin: 16px 0 24px 0; });
+  }
+
+  .ctaWrapper {
+    margin-bottom: 80px;
+  }
+}
+
+.ConclusionGrid {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 156px;
+    object-fit: cover;
+    object-position: top;
+  }
+}

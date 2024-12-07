@@ -1,0 +1,137 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  --gutter-y: 20px;
+  --border-radius: 48px;
+
+  margin: var(--gutter-y) 0;
+
+  .content {
+    position: relative;
+    z-index:1;
+    .headline {
+      font-weight: 800;
+    }
+  }
+
+  .rightCap {
+    position: absolute;
+    z-index:0;
+    top:0px;
+    right:0px;
+    opacity: 0;
+
+    height:40%;
+    #mg.screen.greaterThanOrEqual.md({ height: 100%; });
+
+    width:58vw;
+    #mg.screen.greaterThanOrEqual.md({ width:33vw; });
+
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+    background: rgb(157,147,248);
+    @supports (background: linear-gradient(30deg, rgba(161,220,237,1) 33%, rgba(141,135,246,1) 66%, rgba(77,60,195,1) 100%)) {
+      background: linear-gradient(30deg, rgba(161,220,237,1) 33%, rgba(141,135,246,1) 66%, rgba(77,60,195,1) 100%);
+    }
+    transition:width .5s ease, opacity 0s ease;
+    &.rightCapAnimated {
+      right:0%;
+      opacity: 1;
+      width:60vw;
+      #mg.screen.greaterThanOrEqual.md({ width:35vw; });
+    }
+
+  }
+
+
+
+  .checkListContainer {
+    width:70%;
+    margin:2rem 0;
+    ul {
+      li {
+        padding-left: 1.4rem;
+        list-style: none;
+      	background-image: url('/images/landingpage/icons/check.svg');
+      	background-repeat: no-repeat;
+      	background-position: left top;
+      	background-size: 1.2rem;
+        margin-bottom:.5rem;
+      }
+    }
+  }
+
+  .ctaButton {
+    background: #EDEBFF!important;
+    span {
+      color:#000!important;
+    }
+    &:hover{
+      background: #e0def8!important;
+    }
+  }
+
+}
+
+
+.animStart {
+  animation: fadeIn 1s ease 0s;
+}
+
+
+.stackContainer {
+  position: relative;
+
+  // width:80%;
+  // margin-bottom:0;
+  //
+  // #mg.screen.greaterThanOrEqual.md({
+  //   width: 100%;
+  //   margin-bottom:0rem;
+  // });
+
+  > span:nth-child(0) {
+    position: relative!important;
+  }
+  > span:nth-child(1) {
+    position: absolute!important;
+  }
+
+  &.stackContainerAnimated {
+    animation: fadeIn 1s ease 0s;
+  }
+
+  .stackPlaceholder {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .stackImage {
+    position: absolute;
+    top:0;
+    left:0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .animStart,
+  .stackContainer.stackContainerAnimated {
+    animation: none!important;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+		opacity: 0;
+		transform: scale(.9);
+	}
+  30% {
+		opacity: 0;
+		transform: scale(.9);
+	}
+	100% {
+    opacity: 1;
+		transform: scale(1);
+	}
+}

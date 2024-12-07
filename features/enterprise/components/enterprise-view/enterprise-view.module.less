@@ -1,0 +1,311 @@
+@import (reference) 'styles/index.less';
+
+.enterpriseViewContainer {
+  text-align: center;
+  overflow-x: hidden;
+  width: 100%;
+
+  margin-top:-85px;
+
+  // max-width: 1175px;
+  // margin: 0 auto;
+
+  #mg.screen.lessThan.md({
+    // padding: 20px;
+    margin-top:-85px;
+  });
+
+  padding: 160px 0px 0px;
+
+  background-image: linear-gradient(#edebff,#fff);
+
+  .fullWidth {
+    margin: 0px -40px;
+  }
+
+  .contactWrapper {
+    position: relative;
+    width: 100%;
+
+    .contactBg {
+      position: absolute;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      background-image: url(/images/enterprise/contactbg.png);
+      background-position: 0 0,0 0;
+      background-size: 22px;
+      z-index: 0;
+      opacity: .7;
+    }
+    .contactElement {
+      position: relative;
+      z-index: 1;
+    }
+
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    span {
+      font-size: inherit !important;
+      font-weight: inherit !important;
+    }
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 48px;
+      line-height: 64px;
+    });
+  }
+
+  .specificationItem {
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    img {
+      max-width: 488px;
+    }
+    #mg.screen.lessThan.lg({
+      justify-content: center !important;
+      flex-direction: column;
+    });
+    #mg.screen.lessThan.md({ margin-bottom: 48px; z-index: 0; });
+    text-align: left;
+    width: 100%;
+    max-width: 1440px;
+    z-index: 10;
+    h2 > span {
+      color: @magic;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+    }
+    .requirementsImage {
+      width: 100%;
+    }
+
+    span,
+    p {
+      color: @black;
+      line-height: 28px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  .features {
+    padding-top: 106px;
+    #mg.screen.lessThan.lg({ padding-top: 60px;     justify-content: space-evenly !important; });
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    .contentWrapper {
+      position: relative;
+
+      .illustrationWrapper {
+        position: absolute;
+        height: 79px;
+        top: -68px;
+        right: 40px;
+      }
+
+      .magicBlur {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        top: 5px;
+        left: -160px;
+        max-width: 600px;
+      }
+    }
+
+    .itemDescription {
+      #mg.screen.lessThan.lg({  width: 574px; margin-bottom: 100px });
+    }
+  }
+
+  .featureDetails {
+    background: @white;
+    box-shadow: 2px 6px 28px rgba(0, 0, 0, 0.09);
+    border-radius: 12px;
+    padding: 24px 0;
+    font-size: 16px;
+    line-height: 24px;
+    width: 404px;
+    margin-left: 10px;
+
+    #mg.screen.lessThan.lg({ margin-left: 0; });
+    #mg.screen.lessThan.md({ width: 328px; });
+
+    .featureItem {
+      margin: 8px 16px;
+      font-weight: 500;
+    }
+  }
+
+  .itemDescription {
+    width: 48%;
+    #mg.screen.lessThan.lg({  width: 574px; });
+  }
+
+  .fairPricing {
+    padding-top: 120px;
+    justify-content: space-between !important;
+    #mg.screen.lessThan.lg({  justify-content: space-evenly !important;  });
+    .itemDescription {
+      #mg.screen.lessThan.lg({ margin-right: 15px; });
+    }
+    .estimatorBackdrop {
+      position: relative;
+
+      #mg.screen.lessThan.lg({
+        order: 2;
+        width: 591px;
+      });
+
+      :global(.price__calculator) {
+        #mg.screen.lessThan.lg({
+          margin-top: 40px;
+          box-shadow: 2px 4px 160px 2px rgba(78, 59, 219, 0.17);
+          width: 100%;
+        });
+      }
+
+      &:after {
+        content: '';
+        left: 61.5px;
+        width: 100%;
+        top: 34.12px;
+        height: 100%;
+        z-index: auto;
+        position: absolute;
+        background-size: contain;
+        background-image: url('/images/landing-page-july-2021/cost-estimator/estimator-backdrop.png');
+
+        #mg.screen.lessThan.lg({
+            content: unset;
+          });
+      }
+    }
+  }
+
+  .priceCalculator {
+    box-shadow: 2px 6px 28px rgb(0 0 0 / 9%);
+    border-radius: 10px;
+    width: 384px;
+    height: 408px;
+    #mg.screen.lessThan.md({ width: 352px; });
+    #mg.screen.lessThan.lg({ margin-top: 80px; order: 2; });
+
+    .heading {
+      background: linear-gradient(90deg, #6851ff 0%, #00907e 100%);
+      position: absolute;
+      color: @white;
+      font-size: 12px;
+      line-height: 12px;
+      width: 140px;
+      padding: 6px 0;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-weight: 700;
+    }
+    .content {
+      padding: 65px 40px;
+      #mg.screen.lessThan.sm({ padding: 65px 20px; });
+
+      .monthlyTotal {
+        border-top: 1px solid @grayLightest;
+        padding-top: 15px;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+      }
+      > div {
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+      }
+      .totalMonthlyCost {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      .fairPricingProtection {
+        margin-top: 8px;
+        color: @magicDarker;
+        background: @magicLightest;
+        width: 148px;
+        text-align: center;
+        font-size: 10px;
+        line-height: 10px;
+        padding: 6px 0;
+        border-radius: 6px;
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .referrals {
+    padding-top: 144px;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    #mg.screen.lessThan.lg({ padding-top: 60px;  justify-content: space-evenly !important; });
+
+    .itemDescription {
+      #mg.screen.lessThan.lg({ margin-top: 80px; order: 1 });
+    }
+  }
+
+  .questions {
+    margin: 125px 0 20px;
+    #mg.screen.lessThan.lg({ margin: 80px 0 10px;});
+    .requirementsImage {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.MonthlyLoginsDropdown {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid @grayDarker;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: linear-gradient(45deg, transparent 50%, #545454 50%),
+    linear-gradient(135deg, #545454 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(23px), calc(100% - 15px) calc(23px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 50px 50px;
+  background-repeat: no-repeat;
+
+  &:hover {
+    transition: 0.3s all;
+    border: 1px solid @magic;
+  }
+
+  &:focus {
+    transition: 0.3s all;
+    box-shadow: 0 0 0 2pt @magic;
+  }
+}
+
+.FeatureIcon {
+  border-radius: 6px;
+  background: @magicLightest;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}

@@ -1,0 +1,172 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+  .fg {
+    position: relative;
+    z-index: 0;
+  }
+
+  .bg {
+    position: absolute;
+    top: -150px;
+    left: 0;
+    background: linear-gradient(180deg, #e7f6ff 49.95%, #bbdcfa 100%);
+    height: calc(89% + 150px);
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+
+    .moonandsun {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      #mg.screen.lessThan.lg({
+        width: calc(100% + 310px);
+      });
+    }
+
+    .leftbird {
+      position: absolute;
+      top: 75%;
+      left: 17%;
+
+      #mg.screen.greaterThanOrEqual.lg({
+        display: block;
+        top: 65%;
+        left: -8%;
+        width: auto;
+      });
+
+      #mg.screen.greaterThanOrEqual.xl({
+        left: 34%;
+      });
+    }
+
+    .rightbird {
+      position: absolute;
+      top: 75%;
+      right: 17%;
+      width: 50px;
+
+      #mg.screen.greaterThanOrEqual.lg({
+        display: block;
+        top: 65%;
+        right: -15%;
+        width: auto;
+      });
+
+      #mg.screen.greaterThanOrEqual.xl({
+        right: 34%;
+      });
+    }
+  }
+
+  .hiroTeamWrapper {
+    height: 610px;
+
+    #mg.screen.lessThan.lg({
+      height: 65vw;
+    });
+
+    img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0px);
+      bottom: 74px;
+      width: 100%;
+
+      #mg.screen.lessThan.lg({
+        bottom: 59px;
+      });
+    }
+  }
+
+  .openRoles {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 7px 10px;
+    margin-bottom: 16px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #6851ff;
+
+    #mg.screen.greaterThanOrEqual.lg({
+      margin-top: 72px;
+      margin-bottom: 32px;
+      font-size: 14px;
+    });
+  }
+
+  .headline {
+    text-align: center;
+    max-width: 520px;
+    margin-bottom: 16px;
+
+    &::selection {
+      color: black;
+    }
+
+    @supports (background: linear-gradient(106.43deg, #522fd4 0%, #6bdcff 95.12%)) {
+      background: linear-gradient(106.43deg, #522fd4 0%, #6bdcff 95.12%);
+      background-clip: text;
+      color: transparent;
+    }
+
+    #mg.screen.greaterThanOrEqual.lg({
+      max-width: 800px;
+      margin-bottom: 32px;
+    });
+  }
+
+  .subheadline {
+    text-align: center;
+    max-width: 530px;
+    margin-bottom: 40px;
+    #mg.screen.greaterThanOrEqual.lg({
+      max-width: 592px;
+      margin-bottom: 48px;
+    });
+  }
+
+  .playButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 999px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+    will-change: transform, color, box-shadow;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+    }
+
+    > span {
+      margin-left: 2px;
+      line-height: 0;
+    }
+  }
+}

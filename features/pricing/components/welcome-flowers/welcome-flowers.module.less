@@ -1,0 +1,45 @@
+@import (reference) 'styles/index.less';
+
+.containerWelcomeFlowers {
+  height: 86px;
+  width: 100%;
+  position: relative;
+
+  @media screen and (max-width: @tabletBreakPoint) {
+    height: 128px;
+  }
+
+  .imageLeftFlower {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    transform: translate(-206px, 232px);
+    object-fit: contain;
+    z-index: 13;
+
+    @media screen and (max-width: @tabletBreakPoint) {
+      height: 364px;
+      width: 365px;
+      transform: translate(-170px, 136px);
+    }
+  }
+
+  .imageRightFlower {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    transform: translate(210px, 192px);
+    object-fit: contain;
+    z-index: 13;
+
+    @media screen and (max-width: @tabletBreakPoint) {
+      height: 364px;
+      width: 365px;
+      transform: translate(171px, 136px);
+    }
+  }
+}

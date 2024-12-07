@@ -1,0 +1,258 @@
+@import (reference) 'styles/index.less';
+
+.lineHeader {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: .7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color:#dddbe0;
+
+  div {
+    font-size: .7rem;
+  }
+
+  .trustedLine {
+    width:20px;
+    height:1px;
+  }
+  .trustedLineLeft {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  }
+  .trustedLineRight {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  }
+}
+
+.sectionWrapper {
+  margin-top: 64px;
+  text-align: center;
+  max-width: 1008px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  // #mg.screen.greaterThanOrEqual.sm({ margin-top: 72px; });
+  // #mg.screen.greaterThanOrEqual.md({ margin-top: 86px; });
+  // #mg.screen.greaterThanOrEqual.lg({ margin-top: 120px; });
+
+  .ventureIcons {
+    // min-width: 110px;
+    max-height:56px;
+    #mg.screen.lessThan.lg({
+      // min-width: 110px;
+      // max-height:56px;
+    });
+    object-fit: contain;
+    margin: 15px 20px;
+    opacity: 0.75;
+    transition: opacity 0.4s ease;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .sectionTitle {
+    text-align: center;
+    color: #18171a;
+    font-family:"GTSuper"!important;
+    font-weight: 500!important;
+    line-height: 110%!important;
+    letter-spacing: -1.12px!important;
+    background-color: #6851FF;
+    background-image: linear-gradient(180deg, #000 0%, #6851FF 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    font-size:40px!important;
+    #mg.screen.greaterThanOrEqual.sm({
+      font-size:56px!important;
+    });
+
+  }
+
+}
+
+.AngelInvestorsSection {
+  //margin-top: 64px;
+  position: relative;
+  width: 100%;
+  // #mg.screen.greaterThanOrEqual.sm({ margin-top: 72px; });
+  // #mg.screen.greaterThanOrEqual.md({ margin-top: 86px; });
+  // #mg.screen.greaterThanOrEqual.lg({ margin-top: 120px; });
+
+  .AngelInvestorsBleed {
+    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    #mg.screen.lessThan.lg({ overflow-x: auto; });
+
+    &:hover {
+      overflow-x: auto;
+    }
+
+    //&:before {
+    //  content: '';
+    //  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    //  transform: matrix(-1, 0, 0, 1, 0, 0);
+    //  position: absolute;
+    //  left: 0;
+    //  height: 100%;
+    //  top: 0;
+    //  width: 113px;
+    //}
+    //&:after {
+    //  content: '';
+    //  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    //  position: absolute;
+    //  right: 0;
+    //  height: 100%;
+    //  top: 0;
+    //  width: 113px;
+    //}
+
+    .carousel {
+      display: flex;
+      justify-content: flex-start;
+      will-change: transform;
+      transition: all 1s ease;
+      //animation: marquee 108s linear infinite;
+      //animation-play-state: running;
+      //animation-fill-mode: both;
+      //animation-direction: normal;
+      transform-origin: 50% 50%;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+
+      &:hover,
+      &:focus-within {
+        animation-play-state: paused;
+      }
+    }
+
+    #mg.screen.lessThan.lg({
+      .carousel {
+        animation-duration: 48s !important;
+      }
+      &:last-child .carousel {
+        animation-duration: 40s !important;
+      }
+    });
+
+    &:last-child .carousel {
+      animation-duration: 100s;
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  .stakeholderPillWrapper {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    border-radius: 56px;
+    //margin-right: 24px;
+    //margin-bottom: 18px;
+    margin-top: 9px;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    outline: none;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+    &:hover,
+    &:focus {
+      svg {
+        path {
+          fill: #6851ff;
+        }
+      }
+
+      .stakeholderPill {
+        box-shadow: 0px 4px 20px rgba(104, 81, 255, 0.16);
+      }
+    }
+
+    &:focus {
+      border: 2px solid #6851ff;
+    }
+
+    .stakeholderPill {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px;
+      background: #303030;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.4s ease;
+      border-radius: 56px;
+
+      .stakeholderPillImage {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 8px;
+        object-position: center;
+      }
+
+      img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 8px;
+        object-position: center;
+      }
+
+      svg {
+        margin-left: 24px;
+        margin-right: 16px;
+        path {
+          transition: fill 0.4s ease;
+        }
+      }
+    }
+
+    .stakeholderInfo {
+      h4 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        color: #f8f8fa;
+      }
+
+      p {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: #b6b4ba;
+      }
+    }
+  }
+}

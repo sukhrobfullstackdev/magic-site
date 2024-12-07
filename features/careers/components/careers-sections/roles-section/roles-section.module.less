@@ -1,0 +1,77 @@
+@import (reference) 'styles/index.less';
+
+.RolesSection {
+  margin-top: 64px;
+  #mg.screen.greaterThanOrEqual.lg({ margin-top: 120px; });
+  #mg.screen.greaterThanOrEqual.xl({ margin-top: 160px; });
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .content {
+    max-width: 375px;
+    text-align: center;
+
+    .illustration {
+      text-align: center;
+
+      margin-top: 40px;
+      #mg.screen.greaterThanOrEqual.xl({ margin-top: 64px; });
+
+      width: 205px;
+      #mg.screen.greaterThanOrEqual.lg({ width: 328px; });
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center;
+    #mg.screen.greaterThanOrEqual.xl({ margin-top: 64px; });
+  }
+}
+
+.RoleCard {
+  display: flex;
+  > div { width: 100%; }
+
+  margin: 8px 0;
+  flex-basis: 100%; // one card per row
+  padding: 20px 24px 20px 16px;
+  border-radius: 16px;
+  border: 1px solid #mg.getThemeColor(mid)[lightest];
+  cursor: pointer;
+  color: unset;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  #mg.screen.greaterThanOrEqual.sm({
+    margin: 12px;
+    flex-basis: calc(50% - 82px); // two cards per row, compensate for padding/margin
+    max-width: calc(50% - 82px);
+    flex-shrink: 1;
+    padding: 18px 32px 18px 24px;
+  });
+
+  &:hover {
+    border: 1px solid #mg.getThemeColor(primary)[];
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #mg.getThemeColor(primary)[];
+    box-shadow: 0 0 0 2px #mg.getThemeColor(primary)[];
+  }
+
+  .title {
+    margin-right: 16px;
+  }
+
+  .location {
+    color: #mg.getThemeColor(mid)[];
+  }
+}

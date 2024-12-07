@@ -1,0 +1,130 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+  // #mg.screen.greaterThanOrEqual.sm({ margin-top: 64px; });
+  // #mg.screen.greaterThanOrEqual.md({ margin-top: 80px; });
+  // #mg.screen.greaterThanOrEqual.lg({ margin-top: 148px; });
+
+  .headline {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight:800;
+    #mg.screen.greaterThanOrEqual.md({ margin-bottom: 20px; });
+    // #mg.screen.greaterThanOrEqual.lg({ margin-bottom: 80px });
+  }
+
+  .featuredCustomerStories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    #mg.screen.greaterThanOrEqual.lg({ gap: calc(@gutter_lg / 2); });
+
+    @gutter_xs: 16px;
+    @gutter_sm: 25px;
+    @gutter_md: 30px;
+    @gutter_lg: 32px;
+
+    .featuredCustomerStory {
+      margin-top: 32px;
+      margin-bottom: 42px;
+
+      &:first-child .featuredCustomerStoryCard {
+        margin-left: @gutter_xs;
+        #mg.screen.greaterThanOrEqual.sm({ margin-left: @gutter_sm !important; });
+        #mg.screen.greaterThanOrEqual.md({ margin-left: @gutter_md !important; });
+        #mg.screen.greaterThanOrEqual.lg({ margin-left: @gutter_lg !important; });
+      }
+
+      &:last-child .featuredCustomerStoryCard {
+        margin-right: @gutter_xs;
+        #mg.screen.greaterThanOrEqual.sm({ margin-right: @gutter_sm !important; });
+        #mg.screen.greaterThanOrEqual.md({ margin-right: @gutter_md !important; });
+        #mg.screen.greaterThanOrEqual.lg({ margin-right: @gutter_lg !important; });
+      }
+
+      &:not(:first-child):not(:last-child) .featuredCustomerStoryCard {
+        margin: 0 @gutter_xs;
+        #mg.screen.greaterThanOrEqual.sm({ margin: 0 @gutter_sm; });
+        #mg.screen.greaterThanOrEqual.md({ margin: 0 @gutter_md; });
+        #mg.screen.greaterThanOrEqual.lg({ margin: 0 calc(@gutter_lg / 2); });
+      }
+    }
+
+    .featuredCustomerStoryCardWrapper {
+      height: 100%;
+      position: relative;
+
+      // Reset CSS properties affected by <a>
+      display: block;
+      color: unset;
+      text-decoration: unset;
+      &:focus {
+        outline: none;
+      }
+
+      .featuredCustomerStoryCard {
+        transition: all 0.2s;
+        box-shadow: 2px 4px 40px rgba(78, 77, 82, 0.12);
+        min-width: 285px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @supports (background: linear-gradient(127.25deg, #FFFFFF 1.78%, rgba(255, 255, 255, 0) 99.41%), #EDEBFF) {
+          background: linear-gradient(127.25deg, #FFFFFF 1.78%, rgba(255, 255, 255, 0) 99.41%), #EDEBFF;
+        }
+
+        @supports(border: 1.03125px solid rgba(209, 213, 219, 0.32)) {
+          border: 1.03125px solid rgba(209, 213, 219, 0.32);
+        }
+
+        border-radius: 24px;
+
+        #mg.screen.greaterThanOrEqual.lg({ padding: 32px; });
+
+        // Offset the padding from underlying <Card> component.
+        height: calc(100% - 32px);
+        #mg.screen.greaterThanOrEqual.lg({ height: calc(100% - 64px); });
+
+        h6 {
+          color: #3512B2;
+        }
+      }
+
+      &:hover .featuredCustomerStoryCard,
+      &:focus .featuredCustomerStoryCard {
+        outline: none !important;
+        box-shadow: 2.0625px 4.125px 41.25px rgba(82, 47, 212, 0.22);
+      }
+
+      &:active .featuredCustomerStoryCard {
+        transform: scale(0.95);
+        box-shadow: 2.0625px 4.125px 21.25px rgba(82, 47, 212, 0.22);
+      }
+    }
+  }
+
+  .author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 32px;
+
+    .headshot {
+      margin-right: 16px;
+      width: 56px;
+      height: 56px;
+      #mg.screen.greaterThanOrEqual.lg({
+        width: 64px;
+        height: 64px;
+      });
+    }
+
+    .jobTitle {
+      color: #mg.getThemeColor(mid) [];
+    }
+  }
+}

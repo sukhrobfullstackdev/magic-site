@@ -1,0 +1,52 @@
+@import (reference) 'styles/index.less';
+
+.LaunchSection {
+  display: grid;
+  justify-items: center;
+  margin: 211px 0 200px;
+
+  #mg.screen.lessThan.lg ({
+    margin: 160px 0 160px;
+  });;
+
+  #mg.screen.lessThan.sm ({
+    margin: 120px 0 160px;
+  });;
+
+  h2 {
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 133%;
+    padding-bottom: 91px;
+    z-index: 3;
+    text-align: center;
+
+    #mg.screen.lessThan.lg ({
+      max-width: 600px;
+    });;
+
+    #mg.screen.lessThan.sm ({
+      font-size: 24px;
+      line-height: 150%;
+      text-align: center;
+      padding-bottom: 24px;
+      max-width: 70%;
+    });;
+  }
+
+  .Marquee {
+    top: 200px;
+    left: 0;
+    opacity: 0.2;
+    overflow: visible !important;
+
+    #mg.screen.lessThan.lg ({
+      top: 80px;
+    });;
+
+    #mg.screen.lessThan.sm ({
+      top: 105px;
+    });;
+  }
+}

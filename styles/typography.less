@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'SFMono';
+  font-weight: 500;
+  src: url('/fonts/sf-mono/SFMonoMedium.woff');
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('/fonts/source-code-pro/SourceCodePro-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('/fonts/source-code-pro/SourceCodePro-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'GTSuper';
+  src: url('/fonts/gt-super/GT-Super-Display-Regular.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'JetBrainsMonoExtraLight';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-Thin.ttf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url('/fonts/digital-7/digital-7.ttf');
+  font-weight: 100;
+}
+
+.textBold {
+  font-weight: 600;
+}
+.textUppercase {
+  text-transform: uppercase;
+}
+
+.digital7 {
+  font-family: 'Digital-7' !important;
+}
+
+.homeContainer,
+.trustStackContainer,
+.nftCheckoutContainer {
+  width: 100vw;
+
+  h1,
+  h2,
+  h3 {
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+  h1,
+  .headingLight {
+    background-color: #6851ff;
+    background-image: linear-gradient(180deg, #fff 0%, #6851ff 100%);
+  }
+  h2,
+  h3 {
+    background-color: #6851ff;
+    background-image: linear-gradient(180deg, #000 0%, #6851ff 100%);
+  }
+  h1,
+  h1 *,
+  h2,
+  h2 *,
+  h3,
+  h3 * {
+    font-family: 'GTSuper' !important;
+    font-weight: 500 !important;
+    line-height: 110% !important;
+    letter-spacing: -1.12px !important;
+  }
+
+  h1 {
+    font-size: 40px !important;
+
+    #mg.screen.greaterThanOrEqual.sm({
+        font-size:50px!important;
+      });
+    #mg.screen.greaterThanOrEqual.md({
+      font-size:54px!important;
+    });
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size:58px!important;
+    });
+  }
+  h2 {
+    font-size: 40px !important;
+    #mg.screen.greaterThanOrEqual.sm({
+        font-size:52px!important;
+      });
+  }
+  h3 {
+    font-size: 32px !important;
+    #mg.screen.greaterThanOrEqual.sm({
+        font-size:48px!important;
+      });
+  }
+
+  h4,
+  h4 *,
+  h5,
+  h5 * {
+    font-family: 'JetBrainsMono' !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    font-size: 16px !important;
+    letter-spacing: 3.2px !important;
+    color: #77767a;
+  }
+
+  .accordion-header h3 span {
+    font-family: 'Inter', sans-serif !important;
+    background-image: none;
+    background-color: transparent !important;
+    color: #18171a !important;
+    -webkit-text-fill-color: #18171a !important;
+    -moz-text-fill-color: #18171a !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0em !important;
+  }
+}
+
+.nftCheckoutContainer,
+.pricingContainer {
+  h1 {
+    font-size: 60px !important;
+    #mg.screen.greaterThanOrEqual.sm({
+      font-size:80px!important;
+    });
+  }
+
+  h2,
+  h3 {
+    background-color: #6851ff;
+    background-image: linear-gradient(180deg, #000 0%, #6851ff 100%);
+  }
+
+  h4,
+  h4 *,
+  h5,
+  h5 * {
+    color: #a799ff;
+  }
+}

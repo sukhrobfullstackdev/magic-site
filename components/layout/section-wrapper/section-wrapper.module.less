@@ -1,0 +1,124 @@
+@import (reference) 'styles/index.less';
+
+.SectionWrapper {
+  // Section elements compositions
+  width: 100%;
+  position: relative;
+
+  > .outerWrapper {
+    width: 100%;
+    max-width: 1256px;
+    box-sizing: border-box;
+
+    > .innerWrapper {
+      width: calc(100% - 32px);
+      margin: 0 16px;
+      &.fullBleedOnMobile {
+        margin: 0;
+        width: 100%;
+      }
+
+      &:not(.fullBleedOnDesktop) {
+        #mg.screen.greaterThanOrEqual.sm({ margin: 0 25px !important; width: calc(100% - 50px) !important; });
+        #mg.screen.greaterThanOrEqual.md({ margin: 0 32px !important; width: calc(100% - 64px) !important; });
+        #mg.screen.greaterThanOrEqual.lg({ margin: 0 40px !important; width: calc(100% - 80px) !important; });
+      }
+    }
+  }
+
+  // Block-level typography
+  h1 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -0.02em;
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 80px;
+      line-height: 100px;
+    });
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 48px;
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 64px;
+      line-height: 88px;
+    });
+  }
+
+  h3 {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 48px;
+      line-height: 64px;
+    });
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 24px;
+      line-height: 36px;
+    });
+  }
+
+  h6 {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #mg.getThemeColor(primary) [];
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 12px;
+    });
+  }
+
+  div,
+  p,
+  a {
+    font-size: 14px;
+    line-height: 24px;
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 16px;
+      line-height: 24px;
+    });
+
+    &:global(.textSM) {
+      font-size: 12px;
+      line-height: 20px;
+      #mg.screen.greaterThanOrEqual.lg({
+        font-size: 14px;
+        line-height: 24px;
+      });
+    }
+
+    &:global(.textLG) {
+      font-size: 16px;
+      line-height: 24px;
+      #mg.screen.greaterThanOrEqual.lg({
+        font-size: 18px;
+        line-height: 28px;
+      });
+    }
+
+    &:global(.textXL) {
+      font-size: 18px;
+      line-height: 28px;
+      #mg.screen.greaterThanOrEqual.lg({
+        font-size: 20px;
+        line-height: 32px;
+      });
+    }
+  }
+
+  :global(.textCentered) {
+    text-align: center;
+  }
+}

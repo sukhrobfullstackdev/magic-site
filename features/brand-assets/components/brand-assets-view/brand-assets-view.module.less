@@ -1,0 +1,129 @@
+@import (reference) "styles/index.less";
+
+.BrandAssets {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 80px 20px;
+
+    h1 {
+        font-size: 50px;
+        line-height: 64px;
+        font-weight: 700;
+    }
+
+    .section {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+
+        &.leftBasis {
+            max-width: 90%;
+
+            #mg.screen.greaterThan.md({
+                flex-basis: calc(60% - 60px);
+                max-width: calc(60% - 60px);
+                margin-right: 60px;
+            });
+        }
+
+        &.rightBasis {
+            max-width: 90%;
+
+            #mg.screen.greaterThan.md({
+                flex-basis: 40%;
+                max-width: 40%;
+            });
+        }
+
+        .imageContainer {
+            img { max-width: 100%; }
+        }
+
+        h2 {
+            line-height: normal;
+            font-weight: 600;
+            font-size: 24px;
+
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+
+        h3 {
+            margin: 22px 0;
+            font-size: 20px;
+            font-weight: 600;
+
+            &.do {
+                color: #mg.getThemeColor(success)[];
+            }
+
+            &.dont {
+                color: #mg.getThemeColor(error)[];
+            }
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            padding-inline-start: 20px;
+        }
+
+        ul li {
+            list-style: disc;
+            margin-bottom: 15px;
+        }
+    }
+
+    .brandColors {
+        margin-top: 20px;
+
+        .swatchContainer {
+            display: inline-block;
+            margin-right: 2%;
+            margin-bottom: 2%;
+        }
+
+        .swatch {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            border: none;
+            box-sizing: border-box;
+            width: 100px;
+            height: 120px;
+            line-height: 120px;
+            color: #fff;
+            cursor: pointer;
+
+            &::before {
+                transition: all 0.5s;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                box-shadow: 0 0 0 5px #mg.getThemeColor(mid, 0.5)[lighter];
+                border-radius: 10px;
+                opacity: 0;
+            }
+
+            &:focus, &:active {
+                outline: none;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &.primary { background-color: #6851FF; }
+            &.secondary { background-color: #00C988; }
+            &.dark { background-color: #000000; }
+            &.light { color: black; background-color: #FFFFFF; border: 1px solid #mg.getThemeColor(mid)[]; height: 121px; }
+        }
+    }
+}

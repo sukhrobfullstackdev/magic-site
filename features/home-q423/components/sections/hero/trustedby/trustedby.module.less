@@ -1,0 +1,42 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  position:relative;
+  z-index:1;
+
+  --gutter-1: 80px;
+  --gutter-2: 60px;
+  --gutter-3: 40px;
+
+  margin: var(--gutter-1) auto var(--gutter-2) auto;
+  #mg.screen.greaterThanOrEqual.sm({
+    margin: var(--gutter-3) auto var(--gutter-2) auto;
+  });
+
+  &.nft_minting_disabled {
+    margin:0px 0px 60px 0px;
+    #mg.screen.greaterThanOrEqual.sm({
+      margin:0px 0px 60px 0px;
+    });
+    .mountains1 {
+      bottom:-50px!important;
+    }
+    .mountains2 {
+      bottom:-120px!important;
+    }
+  }
+
+  overflow: hidden;
+
+  .content {
+    .headline {
+      font-size: 16px;
+      font-weight:600;
+      letter-spacing: 0.2em;
+      color: #77767A;
+    }
+  }
+
+
+}

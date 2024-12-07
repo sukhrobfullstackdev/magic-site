@@ -1,0 +1,32 @@
+@import (reference) '../../../styles/index.less';
+
+.banner {
+  z-index: 9;
+  position: relative;
+  margin-bottom: 3px;
+
+  &.light {
+    background-color: rgb(103 81 255 / 6%);
+  }
+
+  &.dim {
+    background-color: #mg.getThemeColor(mid, 0.5) [lightest];
+  }
+
+  &.dark {
+    background-color: #301A80;
+
+    span,
+    svg path {
+      color: #FFFFFF !important;
+      fill: #FFFFFF;
+    }
+  }
+
+  .buttonWrapper {
+    margin: 7px 0;
+    * {
+      white-space: normal !important;
+    }
+  }
+}

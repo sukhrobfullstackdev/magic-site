@@ -1,0 +1,72 @@
+@keyframes fadeInAndScale {
+  0% {
+		opacity: 0;
+		transform: scale(.97);
+	}
+  30% {
+		opacity: 0;
+		transform: scale(.97);
+	}
+	100% {
+    opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes fadeIn {
+  0% {
+		opacity: 0;
+	}
+  30% {
+		opacity: 0;
+	}
+	100% {
+    opacity: 1;
+	}
+}
+
+@keyframes spinLoop {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+.spinLoop {
+  animation: spinLoop 45s linear infinite;
+}
+
+.fadeInAndScale {
+  animation: fadeInAndScale 1s ease 0s;
+}
+.fadeIn {
+  animation: fadeIn 1s ease 0s;
+}
+
+.imageLoad{
+  transition: opacity 1s ease;
+  opacity: 0;
+
+  &.imageLoaded {
+    opacity: 1!important;
+  }
+  &.rotate {
+    transform: rotate(-7deg) !important;
+  }
+
+
+}
+
+.pricingContainer {
+  .animTarget1,
+  .animTarget2,
+  .animTarget3,
+  .animTarget4,
+  .animTarget5,
+  .animTarget6,
+  .animTarget7 {
+    opacity: 0;
+    &.fadeIn {
+      opacity: 1;
+    }
+  }
+}

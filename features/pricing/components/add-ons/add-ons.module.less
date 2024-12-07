@@ -1,0 +1,137 @@
+@import (reference) 'styles/index.less';
+
+.containerBox {
+  .box {
+    .boxInner {
+      position: relative;
+      padding: 2.5rem;
+      border-radius: 48px;
+      border: 1px solid var(--Paper, #FFF);
+      background: linear-gradient(180deg, #EDEBFF 0%, rgba(255, 255, 255, 0.00) 100%);
+      box-shadow: 0px 4px 40px 0px rgba(189, 178, 255, 0.24);
+      min-height:auto;
+      padding-bottom:280px;
+      #mg.screen.greaterThanOrEqual.sm({
+        padding-bottom:2.5rem;
+      });
+      #mg.screen.greaterThanOrEqual.md({
+        min-height:400px;
+      });
+
+      h3, h4 {
+        color:#18171A!important;
+        -webkit-text-fill-color: #18171A!important;
+        -moz-text-fill-color: #18171A!important;
+      }
+
+      li {
+        line-height:32px;
+      }
+
+      .boxBackgroundShape {
+        pointer-events:none;
+        z-index:0;
+        width:200px;
+        height:200px;
+        position:absolute;
+        bottom:0px;
+        right:0px;
+        background-image:url('public/images/pricing/feature-swoosh.png');
+        background-position:right bottom;
+        background-size:contain;
+        background-repeat:no-repeat;
+        #mg.screen.greaterThanOrEqual.lg({
+          width:200px;
+          height:200px;
+        });
+      }
+
+      .boxBackgroundBundle {
+        pointer-events:none;
+        z-index:1;
+        width:100%;
+        height:320px;
+        position:absolute;
+        bottom:0px;
+        right:-50%;
+        transform:translateX(-55%);
+        background-image:url('public/images/pricing/img-probundle.png');
+        background-position:center center;
+        background-size:contain;
+        background-repeat:no-repeat;
+        #mg.screen.greaterThanOrEqual.sm({
+          width:400px;
+          background-position:right center;
+          right:10px;
+          transform:none;
+          bottom:20px;
+          height:260px;
+        });
+        #mg.screen.greaterThanOrEqual.md({
+          height:160px;
+        });
+        #mg.screen.greaterThanOrEqual.lg({
+          right:-20px;
+          height:220px;
+        });
+        #mg.screen.greaterThanOrEqual.xl({
+          height:280px;
+        });
+      }
+
+      .boxBackgroundSupport {
+        pointer-events:none;
+        z-index:1;
+        width:100%;
+        height:280px;
+        position:absolute;
+        bottom:0px;
+        right:-50%;
+        transform:translateX(-50%);
+        background-image:url('public/images/pricing/img-vipsupport.png');
+        background-position:center center;
+        background-size:contain;
+        background-repeat:no-repeat;
+        #mg.screen.greaterThanOrEqual.sm({
+          width:400px;
+          background-position:right center;
+          right:10px;
+          transform:none;
+          bottom:20px;
+          height:260px;
+        });
+        #mg.screen.greaterThanOrEqual.md({
+          height:140px;
+        });
+        #mg.screen.greaterThanOrEqual.lg({
+          right:-20px;
+          height:220px;
+        });
+        #mg.screen.greaterThanOrEqual.xl({
+          height:280px;
+        });
+      }
+
+    }
+  }
+}
+
+
+.ctaSmall {
+  padding:6px 16px;
+  text-decoration: none;
+  display:inline-block;
+  border-radius: 300px;
+  background: #EDEBFF;
+  color: #522FD4;
+  text-align: center;
+  font-feature-settings: 'calt' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  transition:all .2s ease;
+  &:hover {
+    filter: brightness(96%);
+  }
+}

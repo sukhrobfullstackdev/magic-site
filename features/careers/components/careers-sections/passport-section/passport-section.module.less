@@ -1,0 +1,72 @@
+@import (reference) 'styles/index.less';
+
+.PassportSection {
+  margin-top: 64px;
+  // #mg.screen.greaterThanOrEqual.lg({ margin-top: 120px; });
+  // #mg.screen.greaterThanOrEqual.xl({ margin-top: 160px; });
+
+  position: relative;
+  flex-wrap: wrap;
+
+  #mg.screen.lessThan.lg({
+    justify-content: center !important;
+    flex-direction: column;
+  });
+}
+
+.PassportSectionIntroductory {
+  max-width: 44%;
+  flex: 0 0 44%;
+  z-index: 1;
+
+  #mg.screen.lessThan.md({
+    max-width: 430px;
+    flex: 0 0 100%;
+    text-align: center;
+  });
+
+  h3 {
+    margin-bottom: 24px;
+
+    span {
+      font-size: 48px !important;
+      line-height: inherit;
+
+      #mg.screen.lessThan.lg({
+        font-size: 32px !important;
+      });
+    }
+  }
+
+  p {
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  button {
+    margin-top: 8px !important;
+  }
+}
+
+.PassportSectionImage {
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  #mg.screen.greaterThanOrEqual.sm({
+    margin-top: 64px;
+    flex: 0 0 44%;
+    max-width: 44%;
+  });
+
+  img {
+    width: 100%;
+    max-width: 293px;
+
+    #mg.screen.greaterThanOrEqual.sm({
+      max-width: 488px;
+    });
+
+  }
+}

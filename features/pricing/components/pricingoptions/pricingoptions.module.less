@@ -1,0 +1,26 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+
+  #mg.screen.greaterThanOrEqual.md({
+    padding:0px 0px;
+  });
+
+  .headline {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    max-width: 900px;
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 64px;
+      line-height: 88px;
+    });
+  }
+  .subheadline {
+    font-size: 18px;
+    line-height: 28px;
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 20px;
+      line-height: 32px;
+    });
+  }
+}

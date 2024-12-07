@@ -1,0 +1,129 @@
+@import (reference) 'styles/index.less';
+
+.FormContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 592px;
+  border-radius: 40px;
+  font-size: 18px;
+  z-index: 1;
+
+  #mg.screen.lessThan.sm ({
+    background-color: unset;
+    font-size: 16px !important;
+    width: 100%;
+  });;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(180deg, #a799ff 0%, #6851ff 100%);
+    mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  input {
+    all: unset;
+    color: white;
+    padding: 24px 32px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    width: 100%;
+    z-index: 3;
+
+    #mg.screen.lessThan.sm ({
+      padding: 16px 24px;
+    });;
+
+    &::placeholder {
+      color: rgba(182, 180, 186, 1);
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: white;
+      -webkit-box-shadow: 0 0 0px 1000px #5e53a5 inset;
+      mask-image: linear-gradient(to right, white, transparent);
+    }
+  }
+
+  button {
+    all: unset;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    color: white;
+    min-width: 193px;
+    padding: 16px 0;
+    font-weight: 600;
+    line-height: 156%;
+    z-index: 5;
+    margin-right: 6px;
+    border-radius: 1000px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+      filter: blur(20px);
+      background-size: 400%;
+      z-index: -1;
+    }
+
+    #mg.screen.lessThan.sm ({
+      position: absolute;
+      bottom: -80px;
+      width: 100%;
+    });;
+  }
+}
+
+.SubmittedText {
+  position: relative;
+  color: white;
+  font-size: 18px !important;
+  text-align: center;
+  max-width: 380px !important;
+  min-height: 72px;
+  padding: 0 !important;
+}
+
+.Confetti {
+  position: absolute;
+  overflow: visible;
+  height: 800px;
+  width: 200%;
+  top: -300px;
+  left: -50%;
+  z-index: 50;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+@media (hover: hover) {
+  .FormContainer {
+    button {
+      &:hover {
+        &::before {
+          animation: bgShift 8s linear infinite;
+        }
+      }
+    }
+  }
+}

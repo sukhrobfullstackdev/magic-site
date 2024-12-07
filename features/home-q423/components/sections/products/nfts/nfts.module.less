@@ -1,0 +1,55 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  --gutter-y: 0px;
+  --border-radius: 48px;
+
+  margin: var(--gutter-y) auto;
+
+  .content {
+    position: relative;
+    z-index:1;
+    .headline {
+      font-weight: 800;
+    }
+  }
+
+  .slideContainer {
+
+    position: relative;
+    display: block;
+    overflow: visible;
+    // opacity:0;
+    // transform: scale(.9);
+    // transition:opacity .5s ease;
+    &.slideContainerAnimated {
+      display: block;
+      // transform: scale(1);
+      // opacity:1;
+    }
+  }
+
+  .ctaButton {
+    background: #EDEBFF!important;
+    span {
+      color:#3512B2!important;
+    }
+    &:hover{
+      background: #e0def8!important;
+    }
+  }
+
+
+  .checkListContainer {
+
+    .checklistIcon {
+      width:32px;
+    }
+    .checklistItem {
+      color:#4E4D52;
+    }
+  }
+
+
+}

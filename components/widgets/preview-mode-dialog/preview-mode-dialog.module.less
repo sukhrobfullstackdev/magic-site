@@ -1,0 +1,28 @@
+@import (reference) "styles/index.less";
+
+.PreviewModeDialog {
+  position: fixed;
+  z-index: @maxInt;
+  transition: all 0.2s;
+  box-shadow: 2px 4px 72px 2px rgba(78, 59, 219, 0.16);
+  &:hover { box-shadow: 2.0625px 4.125px 41.25px rgba(82, 47, 212, 0.22); }
+
+  max-width: calc(100vw - 50px);
+  width: 100%;
+  left: 10px;
+  bottom: 10px;
+
+  #mg.screen.greaterThanOrEqual.sm({
+    width: 300px !important;
+    bottom: 24px;
+    left: 24px;
+  });
+
+  &.hide {
+    display: none;
+  }
+
+  .message {
+    color: #mg.getThemeColor(mid)[];
+  }
+}

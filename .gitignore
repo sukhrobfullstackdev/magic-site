@@ -1,0 +1,33 @@
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# NextJS build output
+.next
+
+# GraphQL codegen
+/graphql/generated
+
+# `dotenv` environment variables
+.env*
+!.env.example
+
+# Dependency directories
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-related
+.DS_Store
+
+# Sitemap (automatically generated during build)
+sitemap.xml
+
+# We use Yarn
+package-lock.json
+public/static-home-data.txt
+
+.vercel
+.idea

@@ -1,0 +1,182 @@
+@import (reference) "styles/index.less";
+
+.notFoundWrapper {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.notFound {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+
+    .foreground {
+        position: absolute;
+        width: 30%;
+        top: 30%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        z-index: 3;
+
+        h1 {
+            font-size: 120px;
+            margin-bottom: 60px;
+        }
+        h2 {
+            font-size: 24px;
+            line-height: 130%;
+            color: #fff;
+        }
+        a {
+            display: inline-block;
+            padding: 25px 45px;
+            font-size: 28px;
+            font-weight: bold;
+            background: @magic;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: .2s all;
+            color: white;
+            text-decoration: none;
+            line-height: 19px;
+            &:hover {
+                background: lighten(@magic, 10%);
+            }
+        }
+    }
+
+    .middleground {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        z-index: 2;
+
+        .castle,
+        .bushLeft,
+        .bushRight,
+        .flag {
+            position: absolute;
+            padding-bottom: 40px;
+            bottom: 0;
+        }
+        .castle {
+            right: 15%;
+            height: 25%;
+        }
+        .bushLeft {
+            left: -8%;
+            height: 8%;
+        }
+        .bushRight {
+            right: 60%;
+            height: 8%;
+        }
+        .flag {
+            left: 10%;
+            height: 40%;
+        }
+        .ground {
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            bottom: 0;
+            background-repeat: repeat-x;
+            background-color: #DFB47F;
+        }
+    }
+
+    .background {
+        z-index: 1;
+
+        .cloudLeft,
+        .cloudRight,
+        .stars,
+        .moon {
+            position: absolute;
+        }
+
+        .cloudLeft {
+            top: 10%;
+            opacity: .2;
+            -webkit-animation: cloud-left-drift 50s linear infinite;
+            z-index: 2;
+        }
+        .cloudRight {
+            top: 35%;
+            -webkit-animation: cloud-right-drift 60s linear infinite;
+            z-index: 2;
+        }
+        .moon {
+            right: 10%;
+            top: 5%;
+            width: 10%;
+            max-width: 150px;
+            z-index: 1;
+        }
+        .stars {
+            height: 80%;
+            transition: transform 500s linear;
+            animation: stars-drift 500s linear infinite;
+            z-index: 0;
+        }
+
+        @-webkit-keyframes cloud-left-drift {
+            0% {
+                left: 0%;
+                opacity: .2;
+            }
+            50% {
+                left: 50%;
+                opacity: 1;
+            }
+            100% {
+                left : 100%;
+                opacity: 0;
+            }
+        }
+        @-webkit-keyframes cloud-right-drift {
+            0% {
+                left: 60%;
+                opacity: .2;
+            }
+            50% {
+                left: 110%;
+                opacity: 1;
+            }
+            100% {
+                left : 160%;
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes stars-drift {
+            0% { transform: translateX(-65%); }
+            100% { transform: translateX(0%); }
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        .foreground {
+            width: 80%;
+        }
+        .middleground {
+            .castle {
+                height: 15%;
+            }
+            .bushLeft,
+            .bushRight {
+                height: 3%;
+            }
+            .flag {
+                height: 15%;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import (reference) 'styles/index.less';
+
+.ValuesSection {
+  margin: unset !important;
+  margin-bottom: 160px;
+
+  .Values {
+    position: relative;
+    margin-top: 120px;
+    gap: 32px;
+    z-index: 3;
+
+    #mg.screen.lessThan.lg ({
+      display: grid;
+      margin-top: 160px;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      column-gap: 16px;
+      row-gap: 78px;
+    });;
+
+    #mg.screen.lessThan.sm ({
+      grid-template-columns: 1fr 1fr;
+      max-width: 500px;
+      row-gap: 32px;
+      margin: 160px auto 0;
+    });;
+
+    .ValueCard {
+      flex: 1;
+
+      #mg.screen.lessThan.lg ({
+        max-width: 250px;
+      });;
+
+      img {
+        width: 100%;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .ValueText {
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        line-height: 160%;
+        padding-top: 16px;
+        font-weight: 500;
+
+        #mg.screen.lessThan.lg ({
+          font-size: 18px;
+        });;
+
+        #mg.screen.lessThan.md ({
+          font-size: 16px;
+        });;
+      }
+    }
+  }
+}

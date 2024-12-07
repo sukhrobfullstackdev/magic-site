@@ -1,0 +1,30 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+
+  max-width:740px;
+  margin:0 auto;
+
+  .headline {
+    font-size: 64px;
+    line-height: 88px;
+  }
+  .subheadline {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .ctaButton {
+    padding:16px 32px;
+    border-radius: 80px;
+    font-weight: 600;
+
+    transition:transform .3s ease,background-color .3s ease,color .3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+}

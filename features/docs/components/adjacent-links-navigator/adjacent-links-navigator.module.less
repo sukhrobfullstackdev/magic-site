@@ -1,0 +1,73 @@
+@import (reference) 'styles/index.less';
+
+.AdjacentLinksNavigator {
+  #mg.screen.lessThan.lg({
+    display: block;
+  });
+
+  .navigator {
+    padding: 20px;
+    border: 1px solid #E2E0E6;
+    border-radius: 8px;
+    width: 43%;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 4rem;
+
+
+    #mg.screen.lessThan.lg( {
+        display: block;
+        width: auto;
+
+        &.prev {
+          margin-bottom: 1rem;
+          margin-right: 0rem !important;
+        }
+      }
+
+    );
+
+    p {
+      font-size: 14px;
+      color: #606770;
+      font-weight: 500;
+      margin-bottom: .25rem;
+    }
+
+    h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--magic);
+      text-decoration: none
+    }
+
+    svg {
+      path {
+        fill: #606770;
+      }
+    }
+
+    &:hover {
+      border: 1px solid var(--magic);
+
+      svg {
+        path {
+          fill: var(--magic);
+        }
+      }
+    }
+
+    &.next {
+      text-align: right;
+      margin-left: auto;
+
+
+    }
+
+    &.prev {
+      text-align: left;
+      margin-right: 1.5rem;
+    }
+  }
+}

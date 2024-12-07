@@ -1,0 +1,80 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  --gutter-y: 0px;
+  --border-radius: 48px;
+
+  margin: var(--gutter-y) auto;
+
+  .ctaButton {
+    background: #EDEBFF!important;
+
+    padding: 6px 16px!important;
+    span {
+      color:#3512B2!important;
+      font-size: 14px!important;
+    }
+    &:hover{
+      background: #e0def8!important;
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index:1;
+  }
+
+  .imageContent {
+    position: relative;
+    z-index:2;
+    max-width: 700px;
+    margin:0px auto;
+    // transform:translateY(-100px);
+
+  }
+
+  .caseStudyContainer {
+    background-color: #fff;
+    border-radius: 24px;
+    border: 1px solid var(--ink-ink-30, #DDDBE0);
+    padding:32px;
+    max-width: 700px;
+    position:relative;
+    z-index:1;
+
+    transform:none;
+
+    #mg.screen.greaterThanOrEqual.xl({
+      transform:translateY(-40px);
+    });
+
+  }
+
+  .backgroundImage {
+    position: absolute;
+    z-index:0;
+    top:25%;
+    transform:translate(-25%, -50%);
+    left:0px;
+    width:200vw;
+
+    #mg.screen.greaterThanOrEqual.sm({
+      top:35%;
+      transform:translate(0, -50%);
+      width:100vw;
+    });
+
+    #mg.screen.greaterThanOrEqual.lg({
+      top:40%;
+    });
+
+    #mg.screen.greaterThanOrEqual.xl({
+      //width:200vw;
+      top:0px;
+      transform:none;
+    });
+
+  }
+
+}

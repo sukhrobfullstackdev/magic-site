@@ -1,0 +1,142 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  --border-radius: 120px;
+  padding-top:120px;
+  padding-bottom:120px;
+
+  .content {
+    position: relative;
+    z-index:3;
+    color:#fff;
+
+    .prefooterLogo {
+      width:80px;
+      height:80px;
+    }
+  }
+
+  .headline {
+    text-align: center;
+    color: #18171a;
+    font-family:"GTSuper"!important;
+    font-weight: 500!important;
+    line-height: 110%!important;
+    letter-spacing: -1.12px!important;
+    background-color: #6851FF;
+    background-image: linear-gradient(180deg, #FFF 0%, #6851FF 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    font-size:40px!important;
+    #mg.screen.greaterThanOrEqual.sm({
+      font-size:56px!important;
+    });
+  }
+
+  .gradientButton {
+    border:0px;
+    @supports (background: linear-gradient(90deg, #3728B7 0%, #6851FF 50%, #C970FF 100%)) {
+      background: linear-gradient(90deg, #3728B7 0%, #6851FF 50%, #C970FF 100%);
+    }
+    background-size:110%!important;
+    background-position:center center!important;
+
+    transition:background-position 1s ease;
+
+    &:hover {
+      background-position:center center;
+    }
+  }
+
+  .outlineButton {
+    background-color: rgba(255, 255, 255, 0.12)!important;
+    border:1px solid #6851FF!important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15)!important;
+      span {
+        color:#fff!important;
+      }
+    }
+
+    span {
+      color:#fff!important;
+    }
+  }
+
+  .ctaButton {
+    padding:16px 32px;
+    border-radius: 80px;
+    font-weight: 600;
+
+    transition:transform .3s ease,background-color .3s ease,color .3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.01);
+
+    }
+  }
+
+  .background {
+
+    position: absolute;
+    z-index:0;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    width:100vw;
+    background: #140937;
+
+  }
+
+  .topCap {
+    background-color: #F8F8FA;
+    position: absolute;
+    z-index:2;
+    top:0px;
+    left:0px;
+    height:60px;
+    width:100vw;
+    margin-top:0;
+    border-radius: 0px 0px 60px 60px;
+    #mg.screen.greaterThanOrEqual.lg({
+      height:var(--border-radius);
+      border-radius: 0px 0px var(--border-radius) var(--border-radius);
+    });
+  }
+
+  .bottomGradient {
+    background: rgb(255,255,255);
+    @supports (background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)) {
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    }
+    position: absolute;
+    z-index:1;
+    bottom:0px;
+    left:0px;
+    height:100%;
+    width:100vw;
+  }
+
+  .starfield {
+    background-image: url('/images/landingpage/prefooter/prefooter_bg.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    position: absolute;
+    z-index:1;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    height:100%;
+    width:100vw;
+  }
+
+}

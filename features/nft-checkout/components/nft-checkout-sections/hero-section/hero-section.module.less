@@ -1,0 +1,96 @@
+@import (reference) 'styles/index.less';
+
+.Hero {
+  margin-top: 160px;
+
+  #mg.screen.lessThan.sm ({
+    margin-top: clamp(3rem, 20vw, 6rem);
+  });;
+
+  .Marquee {
+    top: 105px;
+
+    #mg.screen.lessThan.sm ({
+      top: 40px;
+    });;
+  }
+
+  .HeroContent {
+    position: relative;
+    width: 100%;
+    gap: 40px;
+    z-index: 3;
+
+    h1 {
+      color: white;
+      letter-spacing: -0.02em;
+      max-width: 592px;
+      text-align: center;
+      text-shadow: 0px 4px 24px rgba(167, 153, 255, 0.8);
+
+      #mg.screen.lessThan.lg ({
+        font-size: 80px;
+        line-height: 105%;
+      });;
+
+      #mg.screen.lessThan.sm ({
+        font-size: 40px;
+        line-height: 115%;
+      });;
+    }
+
+    p {
+      color: white;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      text-align: center;
+      max-width: 780px;
+      opacity: 0.8;
+
+      #mg.screen.lessThan.sm ({
+        font-size: 18px;
+        line-height: 156%;
+      });;
+    }
+  }
+}
+
+.GradientBlurContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -84px;
+  left: 0;
+  overflow: hidden;
+
+  .GradientBlur {
+    position: absolute;
+    top: -692px;
+    left: 50%;
+    transform: scale(1.35) translate(-32.5%);
+    right: 0;
+    z-index: 2;
+    min-width: 1900px;
+    min-height: 2200px;
+    pointer-events: none;
+    user-select: none;
+
+    #mg.screen.lessThan.md ({
+    top: -700px;
+    transform: scale(1.2) translate(-32%);
+
+  });;
+
+    #mg.screen.lessThan.sm ({
+    top: -700px;
+    min-width: 3500px;
+    min-height: 3800px;
+    transform: translate(-20%);
+  });;
+
+    img {
+      filter: blur(30px);
+    }
+  }
+}

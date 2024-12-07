@@ -1,0 +1,18 @@
+@import (reference) 'styles/index.less';
+
+.GraphCMSImage {
+  &.objectFit {
+    &_contain img { object-fit: contain !important; }
+    &_cover img { object-fit: cover !important; }
+    &_fill img { object-fit: fill !important; }
+    &_scale-down img { object-fit: scale-down !important; }
+  }
+
+  &.objectPosition {
+    &_center img { object-position: center !important; }
+    &_left img { object-position: left !important; }
+    &_right img { object-position: right !important; }
+    &_top img { object-position: top !important; }
+    &_bottom img { object-position: bottom !important; }
+  }
+}

@@ -1,0 +1,42 @@
+@import (reference) 'styles/index.less';
+
+.sectionWrapper {
+
+  --gutter-y: 0px;
+  --border-radius: 48px;
+
+  margin: 60px auto;
+  #mg.screen.greaterThanOrEqual.xl({
+    margin: 100px auto;
+  });
+
+  .content {
+    position: relative;
+    z-index:1;
+  }
+
+  .imageContent {
+    position: relative;
+    z-index:1;
+    max-width: 700px;
+    margin:0px auto;
+    // transform:translateY(-100px);
+
+    .imgplaceholder{
+      position: relative;
+      z-index:3;
+      transform:translateY(-40px);
+    }
+
+  }
+
+  .backgroundImage {
+    position: absolute;
+    z-index:0;
+    top:50%;
+    transform:translateY(-50%);
+    left:0px;
+    width:100vw;
+  }
+
+}

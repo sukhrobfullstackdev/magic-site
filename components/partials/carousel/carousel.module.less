@@ -1,0 +1,44 @@
+@import (reference) '../../../styles/index.less';
+
+.Carousel {
+  position: relative;
+
+  .itemsWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow-x: auto;
+    overscroll-behavior-x: none;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+
+    .CarouselItem {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+  }
+
+  .scrollHint {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    &.dark {
+      background: linear-gradient(90deg, rgba(23, 7, 59, 0) 0%, #17073b 100%);
+    }
+    width: 90px;
+    #mg.screen.greaterThanOrEqual.sm({ width: 200px; });
+
+    &.left {
+      left: -1px;
+      transform: scaleX(-1);
+    }
+
+    &.right {
+      right: 0px;
+    }
+  }
+}

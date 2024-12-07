@@ -1,0 +1,111 @@
+@import (reference) "styles/index.less";
+
+.CodeBlock {
+  position: relative;
+
+  .CodeBlockHeader{
+    margin-bottom: 19px;
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    justify-content: space-between;
+
+    .tabs{
+      display: flex;
+      color: #d9d9d9;
+      height: 36px;
+      font-weight: 700;
+    }
+
+    .tabHeader{
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      margin-right: 32px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .selected {
+      font-weight: 700;
+      color: @white;
+    }
+
+    .highlightBar {
+      position: relative;
+      top: 8px;
+      border-top: @white 4px solid;
+      border-radius: 100px 100px 0 0;
+    }
+
+    &:hover .copyButtonWrapper button,
+    &:focus-within .copyButtonWrapper button {
+      opacity: 1;
+    }
+
+    .copyButtonWrapper {
+
+      margin-bottom: 11px;
+
+      button {
+        padding: 4px 10px;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 50px;
+
+        &:hover {
+          opacity: .75
+        }
+
+        span {
+          line-height: 16px !important;
+          font-size: 10px !important;
+        }
+
+        svg {
+          width: 10px;
+          height: 10px;
+          margin-top: 3px;
+          margin-right: 5px;
+
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  :global(.prism-code) {
+    background: #000;
+    color: #f8f8f2;
+    overflow: hidden;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: 'SFMono';
+    white-space: nowrap;
+    overflow-x: auto;
+
+    #mg.screen.lessThan.lg( {
+      padding: 24px;
+    });
+
+    :global(.token-line) > :last-child {
+      margin-right: 1.5rem;
+
+      #mg.screen.lessThan.lg( {
+        margin-right: 13px;
+      });
+    }
+  }
+
+  .lineNumber{
+    text-align: right;
+    padding-right: 1em;
+    user-select: none;
+    opacity: 0.5;
+    color: rgb(255,255,255,0.35)
+  }
+}

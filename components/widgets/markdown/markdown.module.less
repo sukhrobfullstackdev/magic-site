@@ -1,0 +1,476 @@
+@import (reference) "styles/index.less";
+
+.Markdown {
+  font-weight: 400;
+
+  img {
+    width: 100%;
+  }
+
+  // Headings
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: bold;
+    color: black;
+    margin-top: 2.7rem;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  p {
+    margin: 20px 0;
+    color: black;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  // Markdown integration buttons. eg Vercel, Postman
+  a>img {
+    width: 20%;
+  }
+
+  :global(.heading) {
+    margin: 3.5rem 0 2rem 0;
+    font-weight: 600;
+  }
+
+  :global(.heading)>span[id] {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    margin-top: -128px;
+    padding-top: 128px;
+  }
+
+  :global(.heading)>a {
+    color: inherit;
+  }
+
+  :global(.heading)>a:hover {
+    color: inherit;
+    border-bottom: 1px dotted;
+  }
+
+  :global(.heading)>a:hover~ :global(.permalink) {
+    visibility: visible;
+  }
+
+  :global(.heading)> :global(.permalink) {
+    visibility: hidden;
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    :global(.heading)>a {
+      margin-right: 0.5rem;
+    }
+
+    :global(.heading)> :global(.permalink) {
+      display: inline-block;
+    }
+  }
+
+  // Inline code
+  code:global(:not(.hljs)) {
+    color: #6851ff;
+    background-color: #f1eeff;
+    padding: 0.2rem 0.4em;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    transition: color 0.2s ease;
+  }
+
+  // Code
+  pre {
+    background: #000;
+    color: #f8f8f2;
+    white-space: pre-wrap;
+    overflow: hidden;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+
+    #mg.screen.lessThan.lg( {
+        padding: 13px;
+      }
+
+    )
+  }
+
+  pre>code {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: 'SFMono';
+  }
+
+  // Links
+  a:global(.absolute)>code:global(:not(.hljs)) {
+    color: #0074de;
+  }
+
+  a:global(.absolute):hover>code:global(:not(.hljs)) {
+    color: #68b5fb;
+  }
+
+  a:global(.relative) {
+    color: inherit;
+    font-size: inherit;
+    border-bottom: 1px dotted;
+  }
+
+  a:global(.relative):hover {
+    color: gray;
+    text-decoration: none;
+  }
+
+  a:global(.relative):hover>code:global(:not(.hljs)) {
+    color: gray;
+  }
+
+  // Details
+  details {
+    margin: 1.5rem 0;
+    padding: 1.4rem 0rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid #d4d4d4;
+    border-radius: 1px;
+
+    p {
+      margin-top: 1.5rem;
+      margin-left: 15px;
+      margin-bottom: .5rem;
+    }
+  }
+
+  details[open] {
+    overflow: hidden;
+  }
+
+  details>summary {
+    font-weight: 600;
+    font-size: 17px;
+    outline: none;
+    cursor: pointer;
+    list-style-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.52717 6.3538C5.70658 6.14587 5.70658 5.85478 5.56305 5.64685L1.32898 0.822938C1.14957 0.61501 0.862511 0.61501 0.718983 0.822938L0.467809 1.11404C0.288399 1.32196 0.288399 1.61306 0.467809 1.82099L4.12777 5.97953L0.467809 10.1797C0.288399 10.3876 0.288399 10.6787 0.467809 10.8866L0.718983 11.1777C0.862511 11.3856 1.14957 11.3856 1.32898 11.1777L5.52717 6.3538Z' fill='black'/%3E%3C/svg%3E%0A");
+
+    &::-webkit-details-marker {
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 6 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.52717 6.3538C5.70658 6.14587 5.70658 5.85478 5.56305 5.64685L1.32898 0.822938C1.14957 0.61501 0.862511 0.61501 0.718983 0.822938L0.467809 1.11404C0.288399 1.32196 0.288399 1.61306 0.467809 1.82099L4.12777 5.97953L0.467809 10.1797C0.288399 10.3876 0.288399 10.6787 0.467809 10.8866L0.718983 11.1777C0.862511 11.3856 1.14957 11.3856 1.32898 11.1777L5.52717 6.3538Z' fill='black'/%3E%3C/svg%3E%0A");
+      float: right;
+      color: transparent;
+    }
+
+  }
+
+  // Quotes
+  blockquote {
+    color: #666666;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    padding: 0 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  // Cards
+  :global(.card) {
+    margin: 1.5rem 0;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease;
+  }
+
+  :global(.card):hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  :global(.card)>a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #666666;
+    padding: 1.5rem;
+    border: none;
+    transition: color 0.2s ease;
+  }
+
+  :global(.card)>a:hover {
+    color: #111;
+  }
+
+  :global(.card)>a>h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  :global(.card)>a>small {
+    font-size: 0.875rem;
+    color: inherit;
+  }
+
+  // Misc.
+  hr {
+    border: 0;
+    border-top: 1px solid @grayLightest;
+    margin: 1.25rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 2.5rem;
+    margin: 1.25rem 0;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  ol {
+    list-style-type: auto;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 0.625rem;
+  }
+
+  ul li:before {
+    content: '-';
+    color: black;
+    position: absolute;
+    margin-left: -1rem;
+  }
+
+  // Admonitions
+  :global(.admonition) {
+    margin-bottom: 1em;
+    padding: 14px 30px 14px 21px;
+    border-radius: 10px;
+    border-left: 0 !important;
+    margin-top: 1rem;
+
+    p {
+      margin-top: 0;
+    }
+
+    a {
+      font-weight: 700;
+    }
+  }
+
+  :global(.admonition) h5 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  :global(.admonition-icon) {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.4em;
+  }
+
+  :global(.admonition-icon) svg {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    stroke-width: 0;
+  }
+
+  :global(.admonition-content)> :last-child {
+    margin-bottom: 0;
+  }
+
+  // Defaults for custom types
+  :global(.admonition) {
+    background-color: rgba(118, 51, 219, 0.1);
+    border-left: 9px solid #7633db;
+  }
+
+  :global(.admonition) h5 {
+    color: #7633db;
+
+  }
+
+  :global(.admonition) :global(.admonition-icon) svg {
+    stroke: #7633db;
+    fill: #7633db;
+  }
+
+  // Native types
+  :global(.admonition-caution) {
+    background-color: rgba(230, 126, 34, 0.1);
+    border-left: 9px solid #e67e22;
+  }
+
+  :global(.admonition-caution) h5 {
+    color: #e67e22;
+  }
+
+  :global(.admonition-caution) :global(.admonition-icon) svg {
+    stroke: #e67e22;
+    fill: #e67e22;
+  }
+
+  :global(.admonition-tip) {
+    background-color: #E3FAF3;
+    border-left: 9px solid #006647;
+  }
+
+  :global(.admonition-tip) h5,
+  :global(.admonition-tip) p {
+    color: #006647;
+  }
+
+  :global(.admonition-tip) :global(.admonition-icon) svg {
+    stroke: #006647;
+    fill: #006647;
+  }
+
+  :global(.admonition-warning) {
+    background-color: #FFEAE5;
+    border-left: 9px solid #D43100;
+  }
+
+  :global(.admonition-warning) h5,
+  :global(.admonition-warning) p {
+    color: #D43100;
+  }
+
+  :global(.admonition-warning) :global(.admonition-icon) svg {
+    stroke: #D43100;
+    fill: #D43100;
+  }
+
+  :global(.admonition-important) {
+    background-color: #EDEBFF;
+    border-left: 9px solid #3498db;
+  }
+
+  :global(.admonition-important) h5,
+  :global(.admonition-important) p {
+    color: #3512B2;
+  }
+
+  :global(.admonition-important) :global(.admonition-icon) svg {
+    stroke: #3512B2;
+    fill: #3512B2;
+  }
+
+  :global(.admonition-note) {
+    background-color: #FCF2DE;
+    border-left: 9px solid #8A5A03;
+  }
+
+  :global(.admonition-note) h5,
+  :global(.admonition-note) p {
+    color: #8A5A03;
+  }
+
+  :global(.admonition-note) :global(.admonition-icon) svg {
+    stroke: #8A5A03;
+    fill: #8A5A03;
+  }
+
+  :global(table) {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    overflow: auto;
+    width: 100%;
+
+    code {
+      white-space: pre !important;
+    }
+
+    td,
+    th {
+      border: 1px solid #EEEEEE;
+      padding: 18px;
+    }
+
+    th {
+      background-color: var(--white);
+      color: var(--black);
+      font-weight: 600;
+    }
+  }
+
+  .copyContent {
+    transition: all .3s ease;
+
+    &:hover,
+    &:focus-within {
+      button {
+        opacity: 1;
+      }
+    }
+
+    button {
+      float: right;
+      opacity: 0;
+      transition: all .3s ease;
+      padding: 5px 15px;
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-radius: 50px;
+      margin-top: -12px;
+      margin-right: -14px;
+
+      &:hover {
+        opacity: .75
+      }
+
+      span {
+        font-size: 14px !important;
+        color: #fff !important;
+      }
+
+      svg {
+        width: 15px;
+        margin-right: 5px;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

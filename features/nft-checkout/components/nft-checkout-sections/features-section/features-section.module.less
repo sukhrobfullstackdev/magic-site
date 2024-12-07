@@ -1,0 +1,237 @@
+@import (reference) 'styles/index.less';
+
+.FeaturesSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  color: white;
+  margin-bottom: unset !important;
+  margin: 160px 0 200px;
+
+  #mg.screen.lessThan.lg ({
+    padding: 0 8px;
+  });;
+
+  #mg.screen.lessThan.sm ({
+    margin: 120px 0 200px;
+  });;
+
+  .FeatureCard {
+    display: flex;
+    align-items: center;
+    gap: 136px;
+    z-index: 2;
+
+    &:first-child img {
+      max-width: clamp(360px, 30vw, 460px);
+
+      #mg.screen.lessThan.lg ({
+        max-width: 320px;
+      });;
+
+      #mg.screen.lessThan.md ({
+        max-width: unset;
+      });;
+    }
+
+    #mg.screen.lessThan.lg ({
+      gap: 64px;
+    });;
+
+    #mg.screen.lessThan.sm ({
+      gap: 32px;
+      width: 80%;
+    });;
+
+    #mg.screen.lessThan.sm ({
+      flex-direction: column-reverse;
+      max-width: 500px;
+      justify-self: center;
+    });;
+
+    &.--reversed {
+      flex-direction: row-reverse;
+      gap: 140px;
+
+      #mg.screen.lessThan.lg ({
+        gap: 84px;
+      });;
+
+      #mg.screen.lessThan.sm ({
+        flex-direction: column-reverse;
+        gap: 32px;
+      });;
+    }
+
+    &.--multiple {
+      #mg.screen.lessThan.lg ({
+        gap: 122px;
+      });;
+
+      #mg.screen.lessThan.sm ({
+        gap: 32px;
+      });;
+
+      img {
+        transform: translateX(10px);
+
+        #mg.screen.lessThan.lg ({
+          max-width: 250px;
+          transform: translateX(20px);
+        });;
+
+        #mg.screen.lessThan.sm ({
+          max-width: 75vw;
+          transform: unset;
+        });;
+      }
+    }
+
+    p {
+      max-width: 456px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+
+      #mg.screen.lessThan.lg ({
+        font-size: 18px;
+        max-width: 260px;
+      });;
+
+      #mg.screen.lessThan.md ({
+        flex: 1;
+        font-size: 16px;
+        max-width: 100%;
+      });;
+    }
+  }
+
+  .FeatureImg {
+    position: relative;
+
+    #mg.screen.lessThan.lg ({
+      width: 100%;
+      min-width: 250px;
+      flex: 1;
+    });;
+
+    #mg.screen.lessThan.sm ({
+      width: 100%;
+      display: grid;
+      justify-content: center;
+    });;
+
+    > span {
+      overflow:visible!important;
+    }
+
+    > img {
+      max-width: 360px;
+      height: auto;
+      filter: drop-shadow(0px 4px 40px rgba(104, 81, 255, 0.2));
+
+      #mg.screen.lessThan.lg ({
+        max-width: 330px;
+      });;
+
+      #mg.screen.lessThan.md ({
+        width: 100%;
+      });;
+
+      #mg.screen.lessThan.sm ({
+        justify-self: center;
+        max-width: 100%;
+      });;
+    }
+  }
+
+  // last feature decorations
+  .FeatureSideImgs {
+    img {
+      max-width: 140px;
+      max-height: 140px;
+      filter: drop-shadow(0px 0px 12px rgba(255, 255, 255, 0.4));
+
+      #mg.screen.lessThan.lg ({
+        max-width: 100px;
+        max-height: 100px;
+      });;
+
+      &:first-child {
+        position: absolute;
+        top: 2%;
+        right: 78%;
+
+        #mg.screen.lessThan.lg ({
+          top: 2%;
+          right: 74%;
+        });;
+
+        #mg.screen.lessThan.sm ({
+          right: 72%;
+        });;
+      }
+
+      &:last-child {
+        position: absolute;
+        top: 35%;
+        left: 78%;
+
+        #mg.screen.lessThan.lg ({
+          top: 34%;
+          left: 76%;
+        });;
+
+        #mg.screen.lessThan.sm ({
+          left: 72%;
+        });;
+      }
+    }
+  }
+
+  .GradientBlur {
+    position: absolute;
+    top: -35%;
+    left: -500px;
+    right: 0;
+    z-index: 1;
+    min-width: 2300px;
+    min-height: 2600px;
+    pointer-events: none;
+    user-select: none;
+
+    img {
+      filter: blur(30px);
+    }
+
+    &--reversed {
+      position: absolute;
+      transform: rotate(270deg);
+      top: 34%;
+      right: -600px;
+      z-index: 1;
+      min-width: 2300px;
+      min-height: 2600px;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+
+      #mg.screen.lessThan.lg ({
+        min-width: 2100px;
+        min-height: 2400px;
+      });;
+
+      #mg.screen.lessThan.md ({
+        min-width: 1800px;
+        min-height: 2100px;
+      });;
+
+      img {
+        filter: blur(30px);
+      }
+    }
+  }
+}

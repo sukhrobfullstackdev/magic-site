@@ -1,0 +1,58 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+
+    padding:140px 0px 40px;
+    text-align: center;
+
+  .headline {
+
+    max-width: 350px;
+    font-size: 40px;
+    line-height: 46px;
+    letter-spacing: -.02em;
+
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(#ff6dd6,#6851ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    margin-bottom: 24px;
+
+    font-weight: 800;
+
+    #mg.screen.greaterThanOrEqual.md({
+      max-width: 592px;
+      font-size: 80px;
+      line-height: 84px;
+    });
+
+  }
+  .subheadline {
+    max-width: 400px;
+    margin-bottom: 48px;
+    font-size: 18px;
+    line-height: 28px;
+
+    #mg.screen.greaterThanOrEqual.md({
+      max-width: 620px;
+      font-size: 24px;
+      line-height: 36px;
+    });
+
+  }
+
+  .ctaButton {
+    padding:16px 32px;
+    border-radius: 80px;
+    font-weight: 600;
+
+    transition:transform .3s ease,background-color .3s ease,color .3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+}

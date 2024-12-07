@@ -1,0 +1,86 @@
+@import (reference) 'styles/index.less';
+
+.HeroSection {
+
+  color: #fff;
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .heroBackground {
+    background-image: url(/images/enterprise/gridpattern.png),linear-gradient(90deg,#ca63e4,#6851ff);
+    background-position: center,0 0;
+    background-size: cover,auto;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100%;
+    z-index:0;
+  }
+
+  .heroContent {
+
+    position: relative;
+    z-index:1;
+    grid-column-gap: 32px;
+
+    padding:0 50px;
+    text-align: center;
+
+    .headline {
+      font-size: 64px;
+      line-height: 88px;
+    }
+    .subheadline {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    .featureCol {
+
+
+
+      #mg.screen.greaterThanOrEqual.md({
+        padding:0px;
+      });
+
+      .featureColIcon {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255,255,255,.1);
+        border-radius: 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 8px 16px rgba(53,18,178,.06);
+        width:64px;
+        height:64px;
+        margin:0 auto;
+      }
+      .featureColTitle {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+      }
+      .featureColBody {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    .ctaButton {
+      padding:16px 32px;
+      border-radius: 80px;
+      font-weight: 600;
+
+      transition:transform .3s ease,background-color .3s ease,color .3s ease;
+      transform: scale(1);
+
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+  }
+
+
+
+}

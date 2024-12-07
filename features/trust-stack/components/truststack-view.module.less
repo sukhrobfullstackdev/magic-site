@@ -1,0 +1,231 @@
+@import (reference) 'styles/index.less';
+
+.splineBackground {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  z-index:0;
+  pointer-events:none;
+}
+
+.spline {
+  width: 100vw !important;
+  height: 100vh !important;
+  top:0;
+  left:0;
+  position: fixed;
+}
+
+.viewContainer {
+  text-align: center;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+
+  z-index:1;
+
+  margin-top:-155px;
+
+  #mg.screen.lessThan.md({
+    margin-top:-155px;
+  });
+
+
+
+  padding: 160px 0px 50px;
+
+  .fullWidth {
+    margin: 0px -40px;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    span {
+      font-size: inherit !important;
+      font-weight: inherit !important;
+    }
+    #mg.screen.greaterThanOrEqual.lg({
+      font-size: 48px;
+      line-height: 64px;
+    });
+  }
+
+
+}
+
+
+
+.SectionWrapper {
+
+  margin-bottom:0px;
+  #mg.screen.greaterThanOrEqual.md({
+    margin-bottom:100px;
+  });
+
+  .headline {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 32px;
+    line-height: 44px;
+
+    #mg.screen.greaterThanOrEqual.md({
+      font-size: 5rem;
+      line-height: 72px;
+      font-weight: 800;
+    });
+  }
+  .subheadline {
+    font-size: 20px;
+    line-height: 32px;
+    max-width:65%;
+    margin:0 auto;
+
+    #mg.screen.lessThan.md({
+      font-size: 16px;
+      line-height: 24px;
+    });
+
+  }
+
+  .ctaButton {
+    padding:16px 32px;
+    border-radius: 80px;
+    font-weight: 600;
+
+    transition:transform .3s ease,background-color .3s ease,color .3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+
+
+  .formWrapper {
+    color:#fff!important;
+    border-radius: 32px;
+    background: linear-gradient(153deg, #4E4D52 1.54%, #232226 51.27%);
+    box-shadow: 0px 8px 10px 0px rgba(104, 81, 255, 0.60) inset, 0px 24px 64px 0px rgba(55, 40, 183, 0.83), 0px 0px 4px 0px #A799FF inset;
+
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+    z-index: 2;
+
+
+    .grain {
+      position: absolute;
+      top:0;
+      left:0;
+      z-index: 1;
+      pointer-events: none;
+      background-image: url('/images/truststack/grain.png');
+      background-size: cover;
+      width: 100%;
+      height:100%;
+    }
+
+    p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+    }
+
+    h4 {
+      color:#fff!important;
+    }
+
+    label {
+        margin-bottom:.5rem;
+    }
+
+    .fieldSymbol {
+      font-size: 40px;
+      color: #A799FF;
+      text-shadow: 0px 1px 9px #A799FF;
+      padding:0 15px;
+      top:50%;
+      transform:translateY(-50%);
+    }
+
+    .fieldAppend {
+      position: absolute;
+      right:0;
+    }
+    .fieldPrepend {
+       position: absolute;
+       left:0;
+     }
+
+    input {
+      font-family:"Digital-7"!important;
+      font-size: 40px;
+      color: #fff;
+      display: block;
+      width: 100%;
+      padding:1rem;
+      border-radius: 16px;
+      border: 1px solid #000;
+      background: linear-gradient(180deg, #18171A 0%, #170C3E 100%);
+      box-shadow: 0px 4px 4px 0px rgba(167, 153, 255, 0.60) inset, 0px -4px 4px 0px rgba(167, 153, 255, 0.30) inset;
+
+      &.hasSymbol {
+        padding-left:40px;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    .formTop {
+      padding:32px;
+    }
+    .formBottom {
+      padding:32px;
+      border-top:1px solid rgba(167, 153, 255, 0.60);
+
+      border-radius: 0px 0px 32px 32px;
+      background: linear-gradient(180deg, #18171A 0%, #170C3E 100%);
+      box-shadow: 0px 4px 4px 0px rgba(167, 153, 255, 0.60) inset, 0px -4px 4px 0px rgba(167, 153, 255, 0.30) inset;
+
+      .formBottomHeadline {
+        font-size:20px!important;
+        color: #EDEBFF;
+        text-shadow: 0px 1px 9px #A799FF;
+      }
+      .formBottomLabels * {
+        font-size:24px!important;
+        color: #A799FF;
+        text-shadow: 0px 1px 9px #A799FF;
+      }
+      .formBottomNumbers * {
+        font-size:28px!important;
+        color: #EDEBFF;
+        text-shadow: 0px 1px 9px #A799FF;
+      }
+    }
+  }
+
+
+  a {
+    color: #bea7ff;
+    text-decoration: none;
+
+  }
+
+  p, ul {
+    margin-bottom:1rem;
+  }
+
+
+}

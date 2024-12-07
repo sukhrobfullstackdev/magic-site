@@ -1,0 +1,71 @@
+@import (reference) 'styles/index.less';
+
+.BuildADemoNavigator {
+  h3 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 64px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    border: 1px solid #e2e0e6;
+    border-radius: 12px;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    flex: 0 0 42%;
+    max-width: 42%;
+
+    &:hover,
+    &.active {
+      border: 1px solid #6851ff;
+    }
+
+    &.active {
+      box-shadow: 0 0 0 1px #6851ff;
+
+      svg {
+        path {
+          stroke: #6851ff;
+        }
+      }
+    }
+
+    #mg.screen.lessThan.md({
+      min-height: 170px;
+      margin-bottom: 16px;
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      padding: 0;
+      flex-direction: column;
+      justify-content: center;
+
+      h4,
+      svg,
+      p {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+      }
+    });
+
+    h4 {
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 28px;
+      margin: 12px 0;
+      color: #18171a;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 24px;
+      color: #77767a;
+    }
+  }
+}

@@ -1,0 +1,173 @@
+@import (reference) 'styles/index.less';
+
+.containerFAQs {
+  width: 100%;
+  max-width: 1134px;
+
+  .copyFAQs {
+    /* Web Typography/2023 Styles/H2 - Desktop */
+    font-family: GTSuper;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 61.6px */
+    letter-spacing: -1.12px;
+
+    padding: 0 16px;
+
+    background: var(--Headlines, linear-gradient(180deg, #000 0%, #6851ff 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .contentWrapper {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+    gap: 34px;
+
+    @media screen and (max-width: @contentBreakPoint) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contentLeft {
+      flex: 1;
+      // max-width: 554px;
+
+      button {
+        border: 0 !important;
+      }
+      span {
+        text-align: left !important;
+      }
+
+      .copyContactOurSales {
+        color: #6851ff;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          color: #a796ff;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .contentRight {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @media screen and (max-width: @contentBreakPoint) {
+        flex-direction: row;
+        gap: 24px;
+      }
+
+      @media screen and (max-width: @mobileBreakPoint) {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .contentBox {
+        display: flex;
+        flex-direction: row;
+        padding: 48px 0 48px 48px;
+        width: 100%;
+        position: relative;
+
+        border-radius: 48px;
+        border: 1px solid var(--Paper, #fff);
+        background: linear-gradient(0deg, #ddd9ff 0%, rgba(255, 255, 255, 0) 100%);
+        box-shadow: 0px 4px 40px 0px rgba(189, 178, 255, 0.24);
+
+        cursor: pointer;
+
+        @media screen and (max-width: @contentBreakPoint) {
+          flex-direction: column;
+          padding: 0;
+        }
+
+        .contentBoxInfo {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          @media screen and (max-width: @contentBreakPoint) {
+            padding: 32px;
+          }
+
+          .copyBoxTitle {
+            width: 240px;
+            color: @ink100;
+
+            /* Web Typography/2023 Styles/H3 - Desktop */
+            font-family: GTSuper;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 110%; /* 52.8px */
+            letter-spacing: -0.96px;
+
+            @media screen and (max-width: @mobileBreakPoint) {
+              width: 100%;
+            }
+          }
+
+          .copyBoxDescription {
+            align-self: stretch;
+
+            color: @magic50;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; /* 150% */
+
+            color: @ink100;
+
+            /* Web Typography/Desktop/P Standard (400) - Desktop */
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+
+        .imageBundle {
+          width: 220px;
+          height: 220px;
+          z-index: 7;
+          transform: scaleX(-1);
+
+          @media screen and (max-width: @contentBreakPoint) {
+            align-self: last baseline;
+          }
+        }
+
+        .itemShield {
+          width: 220px;
+          height: 220px;
+          z-index: 7;
+
+          @media screen and (max-width: @contentBreakPoint) {
+            align-self: last baseline;
+          }
+        }
+
+        .imageSwoosh {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 168px;
+          height: 168px;
+          z-index: 5;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.Marquee {
+  position: absolute !important;
+  left: 0;
+  top: 80px;
+  max-width: 150%;
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+  animation: opacity 0.6s ease-in;
+  z-index: 0;
+
+  > div {
+    gap: 32px;
+    margin-right: 32px;
+  }
+
+  img {
+    border-radius: 40px;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: auto;
+  }
+}

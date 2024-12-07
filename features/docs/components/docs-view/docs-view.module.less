@@ -1,0 +1,132 @@
+@import (reference) 'styles/index.less';
+
+.docsLayout {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  #mg.screen.greaterThanOrEqual.sm({
+    max-width: 720px;
+  });
+
+  #mg.screen.greaterThanOrEqual.md({
+    max-width: 1001px;
+  });
+
+  #mg.screen.greaterThanOrEqual.lg({
+    max-width: 1280px;
+  });
+
+  .tocContainer,
+  .menuBarContainer {
+    display: none;
+    #mg.screen.greaterThanOrEqual.lg({
+      display: block;
+    });
+
+    #mg.screen.greaterThanOrEqual.md({
+      flex-grow: 0;
+      flex-shrink: 0;
+    });
+  }
+
+  .menuBarContainer {
+    #mg.screen.greaterThanOrEqual.md({
+      max-width: 17.666667%;
+    });
+  }
+
+  .tocContainer {
+    #mg.screen.greaterThanOrEqual.md({
+      max-width: 14.666667%;
+    });
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+
+    // sync layout
+    #mg.screen.lessThan.lg( {
+        padding: 0 15px;
+      }
+
+    );
+  }
+
+  .menuBarContainer,
+  .tocContainer,
+  .content {
+    position: relative;
+    width: 100%;
+
+    #mg.screen.greaterThanOrEqual.lg({
+      padding-left: 15px;
+      padding-right: 15px;
+    });
+  }
+}
+
+.content {
+  max-width: 100%;
+
+  #mg.screen.greaterThanOrEqual.sm({
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 720px;
+  });
+
+  #mg.screen.greaterThanOrEqual.lg({
+    max-width: 60%;
+  });
+}
+
+.borderTop {
+  #mg.screen.greaterThanOrEqual.md({
+    border-top: 1px solid transparent;
+  });
+}
+
+.tableOfContentsNav {
+  background-color: #mg.getThemeColor(light) [];
+  width: 100%;
+  border-top: 1px solid #mg.getThemeColor(mid) [lightest];
+  border-bottom: 1px solid #mg.getThemeColor(mid) [lightest];
+  z-index: 1;
+
+  &Actions {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  // Sticky for mobile-ish devices.
+  position: sticky;
+  top: 0.01rem;
+  background: #fff;
+
+  button {
+    padding: 0 25px !important;
+  }
+
+  #mg.screen.greaterThanOrEqual.lg( {
+      position: static;
+      top: unset;
+    }
+
+  );
+}
+
+.docsContents {
+  will-change: auto;
+}
+
+.docsSubNav {
+  position: sticky;
+  top: 0.2px;
+  z-index: 100;
+}
